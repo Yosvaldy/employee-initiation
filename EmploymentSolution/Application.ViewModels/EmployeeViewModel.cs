@@ -24,6 +24,18 @@ namespace Application.ViewModels
         [StringLength(10)]
         public string Phone { get; set; }
 
+        [StringLength(255)]
+        public string RestrictedAccess { get; set; }
+
+        [StringLength(255)]
+        public string AdditionalInfoUserAccess { get; set; }
+
+        [StringLength(255)]
+        public string AdditionalService { get; set; }
+
+        public int EmploymentId { get; set; }
+        public Employment Employment { get; set; }
+
         public virtual IEnumerable<Employment> Employments { get; set; }
     }
 }

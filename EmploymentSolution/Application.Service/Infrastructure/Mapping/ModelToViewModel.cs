@@ -1,4 +1,5 @@
-﻿using Application.Model.Entities;
+﻿using Application.Dtos;
+using Application.Model.Entities;
 using Application.ViewModels;
 using AutoMapper;
 using System;
@@ -20,6 +21,7 @@ namespace Application.Service.Infrastructure.Mapping
         {
             CreateMap<Employment, EmploymentViewModel>();
             CreateMap<Employee, EmployeeViewModel>();
+            CreateMap<Company, CompanyViewModel>();
         }
     }
 }

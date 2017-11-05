@@ -18,12 +18,16 @@ namespace Application.ViewModels
         [StringLength(50)]
         public string ManagerEmail { get; set; }
 
-        public virtual EmployeeViewModel Employee { get; set; }
+        public int EmployeeId { get; set; }
+        public Employee Employee { get; set; }
 
-        public virtual IEnumerable<EmploymentAdditionalService> EmploymentAdditionalServices { get; set; }
-        public virtual IEnumerable<EmploymentCompanyAccessLevel> EmploymentCompanyAccessLevels { get; set; }
-        public virtual IEnumerable<EmploymentOtherPosition> EmploymentOtherPositions { get; set; }
-        public virtual IEnumerable<EmploymentPosition> EmploymentPositions { get; set; }
-        public virtual IEnumerable<EmploymentServiceEquipment> EmploymentServiceEquipments { get; set; }
+        public int PositionId { get; set; }
+        public Position Position { get; set; }
+
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
+
+        public ICollection<AccessLevel> AccessLevels { get; set; }
+        public ICollection<ServiceEquipment> ServiceEquipments { get; set; }
     }
 }

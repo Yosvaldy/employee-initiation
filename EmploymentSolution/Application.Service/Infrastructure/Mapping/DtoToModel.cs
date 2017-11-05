@@ -1,5 +1,5 @@
-﻿using Application.Model.Entities;
-using Application.ViewModels;
+﻿using Application.Dtos;
+using Application.Model.Entities;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace Application.Service.Infrastructure.Mapping
 {
-    public class ViewModelToView : Profile
+    public class DtoToModel : Profile
     {
-        public ViewModelToView()
+        public DtoToModel()
         {
             CreateMaps();
         }
 
         public void CreateMaps()
         {
-            CreateMap<EmploymentViewModel, Employment>();
-            CreateMap<EmployeeViewModel, Employee>();
+            CreateMap<CompanyDto, Company>()
+                .ForMember(c => c.CompanyId, opt => opt.Ignore());   //Just in Case you Update the Company, ignore change id.
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Appplication.Api.Infrastructure.Autofac;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
