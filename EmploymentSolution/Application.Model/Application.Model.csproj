@@ -119,6 +119,14 @@
     <Compile Include="Migrations\201711052125114_DeleteDescriptionColumnFromSomeTables.Designer.cs">
       <DependentUpon>201711052125114_DeleteDescriptionColumnFromSomeTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711060311496_RefactoringEmploymentAndEmployeeTables.cs" />
+    <Compile Include="Migrations\201711060311496_RefactoringEmploymentAndEmployeeTables.Designer.cs">
+      <DependentUpon>201711060311496_RefactoringEmploymentAndEmployeeTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711060322131_ChangeTableNameInEmployments.cs" />
+    <Compile Include="Migrations\201711060322131_ChangeTableNameInEmployments.Designer.cs">
+      <DependentUpon>201711060322131_ChangeTableNameInEmployments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\ServiceEquipment.cs" />
@@ -169,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711052125114_DeleteDescriptionColumnFromSomeTables.resx">
       <DependentUpon>201711052125114_DeleteDescriptionColumnFromSomeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711060311496_RefactoringEmploymentAndEmployeeTables.resx">
+      <DependentUpon>201711060311496_RefactoringEmploymentAndEmployeeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711060322131_ChangeTableNameInEmployments.resx">
+      <DependentUpon>201711060322131_ChangeTableNameInEmployments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

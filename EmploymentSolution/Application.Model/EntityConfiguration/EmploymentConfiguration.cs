@@ -1,10 +1,5 @@
 ﻿using Application.Model.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Model.EntityConfiguration
 {
@@ -15,6 +10,27 @@ namespace Application.Model.EntityConfiguration
             Property(e => e.ManagerEmail)
             .IsRequired()
             .HasMaxLength(50);
+
+            Property(e => e.RestrictedAccess)
+                .HasMaxLength(255);
+
+            Property(e => e.AdditionalInfoUserAccess)
+            .HasMaxLength(255);
+
+            Property(e => e.AdditionalService)
+            .HasMaxLength(255);
+
+            Property(e => e.PositionOtherDescription)
+                .HasMaxLength(255);
+
+            Property(e => e.CompanyOtherDescription)
+            .HasMaxLength(255);
+
+            Property(e => e.AccessLevelOtherDescription)
+            .HasMaxLength(255);
+
+            Property(e => e.ServiceEquipmentOtherdescription)
+            .HasMaxLength(255);
 
             HasRequired(e => e.Position)
             .WithMany(e => e.Employments)

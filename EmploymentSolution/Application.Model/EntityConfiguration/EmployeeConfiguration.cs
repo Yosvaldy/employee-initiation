@@ -1,10 +1,5 @@
 ﻿using Application.Model.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Model.EntityConfiguration
 {
@@ -24,14 +19,7 @@ namespace Application.Model.EntityConfiguration
                 .IsRequired()
                 .HasMaxLength(10);
 
-                Property(e => e.RestrictedAccess)
-                .HasMaxLength(255);
-
-                Property(e => e.AdditionalInfoUserAccess)
-                .HasMaxLength(255);
-
-                Property(e => e.AdditionalService)
-                .HasMaxLength(255);
+                
         }
     }
 }

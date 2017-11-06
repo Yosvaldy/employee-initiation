@@ -11,6 +11,15 @@ namespace Application.Dtos
         public DateTime StartDate { get; set; }
         public string ManagerEmail { get; set; }
 
+        public string RestrictedAccess { get; set; }
+        public string AdditionalInfoUserAccess { get; set; }
+        public string AdditionalService { get; set; }
+
+        public string PositionOtherDescription { get; set; }
+        public string CompanyOtherDescription { get; set; }
+        public string AccessLevelOtherDescription { get; set; }
+        public string ServiceEquipmentOtherdescription { get; set; }
+
         public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
 
