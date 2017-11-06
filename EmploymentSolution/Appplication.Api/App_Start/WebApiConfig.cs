@@ -3,6 +3,7 @@ using Newtonsoft.Json.Serialization;
 using System;
 using System.Net.Http.Formatting;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Appplication.Api
 {
@@ -17,6 +18,10 @@ namespace Appplication.Api
 
             // Web API configuration and services
 
+
+            //Enable CORS
+            var cors = new EnableCorsAttribute("http://localhost:4200", "*", "*");
+            config.EnableCors(cors);
 
             //ToFormatMediaType
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.MediaTypeMappings
