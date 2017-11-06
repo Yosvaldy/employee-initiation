@@ -17,7 +17,7 @@ namespace Application.Service.Infrastructure.Mapping
             CreateMap<Position, PositionDto>();
             CreateMap<ServiceEquipment, ServiceEquipmentDto>();
             CreateMap<AccessLevel, AccessLevelDto>();
-            CreateMap<Employee, EmployeeDto>();
+            CreateMap<Employment, EmploymentDto>();
         }
     }
 }

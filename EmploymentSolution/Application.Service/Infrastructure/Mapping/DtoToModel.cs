@@ -25,11 +25,8 @@ namespace Application.Service.Infrastructure.Mapping
             CreateMap<AccessLevelDto, AccessLevel>()
                 .ForMember(c => c.AccessLevelId, opt => opt.Ignore());
 
-            CreateMap<EmployeeDto, Employee>()
-                .ForMember(c => c.EmployeeId, opt => opt.Ignore());
-
-            CreateMap<EmployeeDto, Employee>()
-                .ForMember(c => c.EmployeeId, opt => opt.Ignore());
+            CreateMap<EmploymentDto, Employment>()
+                .ForMember(c => c.EmploymentId, opt => opt.Ignore());
         }
     }
 }

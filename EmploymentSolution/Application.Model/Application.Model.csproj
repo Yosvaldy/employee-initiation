@@ -54,12 +54,10 @@
     <Compile Include="Entities\AccessLevel.cs" />
     <Compile Include="AppDbContext.cs" />
     <Compile Include="Entities\Company.cs" />
-    <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\Employment.cs" />
     <Compile Include="Entities\Position.cs" />
     <Compile Include="EntityConfiguration\AccessLevelConfiguration.cs" />
     <Compile Include="EntityConfiguration\CompanyConfiguration.cs" />
-    <Compile Include="EntityConfiguration\EmployeeConfiguration.cs" />
     <Compile Include="EntityConfiguration\EmploymentConfiguration.cs" />
     <Compile Include="EntityConfiguration\PositionConfiguration.cs" />
     <Compile Include="EntityConfiguration\ServiceEquipmentConfiguration.cs" />
@@ -127,6 +125,10 @@
     <Compile Include="Migrations\201711060322131_ChangeTableNameInEmployments.Designer.cs">
       <DependentUpon>201711060322131_ChangeTableNameInEmployments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711062034537_RemoveEmployeeEntity.cs" />
+    <Compile Include="Migrations\201711062034537_RemoveEmployeeEntity.Designer.cs">
+      <DependentUpon>201711062034537_RemoveEmployeeEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\ServiceEquipment.cs" />
@@ -183,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711060322131_ChangeTableNameInEmployments.resx">
       <DependentUpon>201711060322131_ChangeTableNameInEmployments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711062034537_RemoveEmployeeEntity.resx">
+      <DependentUpon>201711062034537_RemoveEmployeeEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

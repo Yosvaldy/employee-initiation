@@ -46,7 +46,7 @@ namespace Appplication.Api.Infrastructure.Autofac
             builder.Register(ctx => new MapperConfiguration(cfg =>
             {
                 cfg.ConstructServicesUsing(DependencyResolver.Current.GetService);
-                cfg.AddProfiles(typeof(ViewModelToModel).Assembly);
+                cfg.AddProfiles(typeof(DtoToModel).Assembly);
             })).SingleInstance();
 
             builder.Register(c => c.Resolve<MapperConfiguration>().CreateMapper()).As<IMapper>()

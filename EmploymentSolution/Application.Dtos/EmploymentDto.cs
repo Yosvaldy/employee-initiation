@@ -7,6 +7,10 @@ namespace Application.Dtos
     public class EmploymentDto
     {
         public int EmploymentId { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public DateTime StartDate { get; set; }
         public string ManagerEmail { get; set; }
@@ -19,9 +23,6 @@ namespace Application.Dtos
         public string CompanyOtherDescription { get; set; }
         public string AccessLevelOtherDescription { get; set; }
         public string ServiceEquipmentOtherdescription { get; set; }
-
-        public int EmployeeId { get; set; }
-        public Employee Employee { get; set; }
 
         public int PositionId { get; set; }
         public Position Position { get; set; }

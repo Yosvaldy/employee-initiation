@@ -53,13 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IEmployeeService.cs" />
     <Compile Include="Abstract\IAccessLevelService.cs" />
     <Compile Include="Abstract\ICompanyService.cs" />
     <Compile Include="Abstract\IEmploymentService.cs" />
     <Compile Include="Abstract\IPositionService.cs" />
     <Compile Include="Abstract\IServiceEquipmentService.cs" />
-    <Compile Include="Concrete\EmployeeService.cs" />
     <Compile Include="Concrete\AccessLevelService.cs" />
     <Compile Include="Concrete\CompanyService.cs" />
     <Compile Include="Concrete\EmploymentService.cs" />

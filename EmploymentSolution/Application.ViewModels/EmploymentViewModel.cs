@@ -1,25 +1,28 @@
 ﻿using Application.Model.Entities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.ViewModels
 {
     public class EmploymentViewModel
     {
         public int EmploymentId { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public DateTime StartDate { get; set; }
-
-        [Required]
-        [StringLength(50)]
         public string ManagerEmail { get; set; }
 
-        public int EmployeeId { get; set; }
-        public Employee Employee { get; set; }
+        public string RestrictedAccess { get; set; }
+        public string AdditionalInfoUserAccess { get; set; }
+        public string AdditionalService { get; set; }
+
+        public string PositionOtherDescription { get; set; }
+        public string CompanyOtherDescription { get; set; }
+        public string AccessLevelOtherDescription { get; set; }
+        public string ServiceEquipmentOtherdescription { get; set; }
 
         public int PositionId { get; set; }
         public Position Position { get; set; }

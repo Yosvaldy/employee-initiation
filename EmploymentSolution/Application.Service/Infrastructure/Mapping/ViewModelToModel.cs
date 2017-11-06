@@ -19,7 +19,6 @@ namespace Application.Service.Infrastructure.Mapping
         public void CreateMaps()
         {
             CreateMap<EmploymentViewModel, Employment>();
-            CreateMap<EmployeeViewModel, Employee>();
         }
     }
 }

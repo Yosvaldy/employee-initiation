@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\AccessLevelRepository.cs" />
     <Compile Include="Repositories\CompanyRepository.cs" />
     <Compile Include="Repositories\EmploymentRepository.cs" />

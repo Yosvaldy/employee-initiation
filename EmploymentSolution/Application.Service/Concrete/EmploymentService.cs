@@ -1,13 +1,10 @@
 ﻿using Application.DAL.Abstract.Interfaces;
 using Application.DAL.Concrete.Infrastructure;
+using Application.Dtos;
 using Application.Service.Abstract;
-using Application.ViewModels;
 using AutoMapper;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Service.Concrete
 {
@@ -24,9 +21,9 @@ namespace Application.Service.Concrete
             this.mapper = mapper;
         }
 
-        public IEnumerable<EmploymentViewModel> GetAll()
+        public IEnumerable<EmploymentDto> GetAll()
         {
-            return employment.GetAll().Select(mapper.Map<EmploymentViewModel>);
+            return employment.GetAll().Select(mapper.Map<EmploymentDto>);
         }
     }
 }

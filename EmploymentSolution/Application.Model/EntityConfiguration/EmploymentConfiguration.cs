@@ -7,6 +7,18 @@ namespace Application.Model.EntityConfiguration
     {
         public EmploymentConfiguration()
         {
+            Property(e => e.FullName)
+            .IsRequired()
+            .HasMaxLength(50);
+
+            Property(e => e.Email)
+            .IsRequired()
+            .HasMaxLength(50);
+
+            Property(e => e.Phone)
+            .IsRequired()
+            .HasMaxLength(10);
+
             Property(e => e.ManagerEmail)
             .IsRequired()
             .HasMaxLength(50);
@@ -36,12 +48,9 @@ namespace Application.Model.EntityConfiguration
             .WithMany(e => e.Employments)
             .HasForeignKey(e => e.PositionId);
 
-            HasRequired(e => e.Employee)
-            .WithRequiredPrincipal(e => e.Employment);
-
             HasMany(e => e.AccessLevels)
             .WithMany(e => e.Employments)
-            .Map(m => 
+            .Map(m =>
             {
                 m.ToTable("EmploymentAccessLevels");
                 m.MapLeftKey("EmploymentId");
@@ -50,7 +59,7 @@ namespace Application.Model.EntityConfiguration
 
             HasMany(e => e.ServiceEquipments)
             .WithMany(e => e.Employments)
-            .Map(m => 
+            .Map(m =>
             {
                 m.ToTable("EmploymentServices");
                 m.MapLeftKey("EmploymentId");
