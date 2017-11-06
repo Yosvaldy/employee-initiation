@@ -1,11 +1,6 @@
 ﻿using Application.Dtos;
 using Application.Model.Entities;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Service.Infrastructure.Mapping
 {
@@ -19,6 +14,10 @@ namespace Application.Service.Infrastructure.Mapping
         public void CreateMaps()
         {
             CreateMap<Company, CompanyDto>();
+            CreateMap<Position, PositionDto>();
+            CreateMap<ServiceEquipment, ServiceEquipmentDto>();
+            CreateMap<AccessLevel, AccessLevelDto>();
+            CreateMap<Employee, EmployeeDto>();
         }
     }
 }

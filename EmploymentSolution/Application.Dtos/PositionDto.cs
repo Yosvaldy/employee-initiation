@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.ViewModels
+namespace Application.Dtos
 {
-    public class CompanyViewModel
+    public class PositionDto
     {
-        public int CompanyId { get; set; }
+        public int PositionId { get; set; }
         public string Name { get; set; }
 
-        public ICollection<AccessLevel> AccessLevels { get; set; }
+        public ICollection<Employment> Employments { get; set; }
     }
 }

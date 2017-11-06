@@ -3,33 +3,28 @@ using Application.DAL.Concrete.Infrastructure;
 using Application.Dtos;
 using Application.Model.Entities;
 using Application.Service.Abstract;
-using Application.ViewModels;
 using AutoMapper;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
 
 namespace Application.Service.Concrete
 {
-    public class CompanyService : ICompanyService
+    public class EmployeeService : IEmployeeService
     {
-        private ICompanyRepository company;
+        private IEmployeeRepository employee;
         private IUnitOfWork unitOfWork;
         private IMapper mapper;
 
-        public CompanyService(ICompanyRepository company, IUnitOfWork unitOfWork, IMapper mapper)
+        public EmployeeService(IEmployeeRepository emplo, IUnitOfWork unitOfWork, IMapper mapper)
         {
-            this.company = company;
+            this.employee = emplo;
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
 
-        public IEnumerable<CompanyDto> GetAll()
+        public IEnumerable<EmployeeDto> GetAll()
         {
-            return company.GetAll().Select(mapper.Map<Company, CompanyDto>);
+            return employee.GetAll().Select(mapper.Map<Employee, EmployeeDto>);
         }
     }
 }

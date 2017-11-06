@@ -5,16 +5,15 @@ using System.Linq;
 
 namespace Application.DAL.Concrete.Repositories
 {
-    public class CompanyRepository : Repository<Company>, ICompanyRepository
+    public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
     {
-        public CompanyRepository(DbContext db) : base(db)
+        public EmployeeRepository(DbContext db) : base(db)
         {
         }
 
-        public override IQueryable<Company> GetAll()
+        public override IQueryable<Employee> GetAll()
         {
             return base.GetAll();
-            //return base.GetAll().Include(c => c.AccessLevels);
         }
     }
 }

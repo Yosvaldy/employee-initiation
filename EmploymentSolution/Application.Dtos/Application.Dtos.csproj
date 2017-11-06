@@ -40,8 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmploymentDto.cs" />
+    <Compile Include="EmployeeDto.cs" />
+    <Compile Include="AccessLevelDto.cs" />
     <Compile Include="CompanyDto.cs" />
+    <Compile Include="PositionDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceEquipmentDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Model\Application.Model.csproj">
