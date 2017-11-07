@@ -1,17 +1,12 @@
 ﻿using Application.DAL.Abstract.Interfaces;
 using Application.DAL.Concrete.Repositories;
+using Application.Model;
 using Application.Service.Abstract;
 using Application.Service.Infrastructure.Mapping;
 using Autofac;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.Entity;
-using System.Web.Configuration;
 using System.Web.Mvc;
-using Application.Model;
 
 namespace Appplication.Api.Infrastructure.Autofac
 {
@@ -36,7 +31,7 @@ namespace Appplication.Api.Infrastructure.Autofac
             var assemblies = new[] { typeof(IEmploymentRepository).Assembly, typeof(EmploymentRepository).Assembly };
             builder.RegisterAssemblyTypes(assemblies)
                        .AsImplementedInterfaces().InstancePerLifetimeScope();
-            builder.RegisterType<AppDbContext>().As<DbContext>();
+            builder.RegisterType<AppDbContext>().As<DbContext>().InstancePerLifetimeScope();
         }
 
 

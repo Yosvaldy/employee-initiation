@@ -48,7 +48,7 @@ namespace Application.DAL.Concrete.Repositories
         public virtual Model Update(Model entity)
         {
             var entry = this.GetDbEntry(entity);
-            entry.CurrentValues.SetValues(entity);
+            dbSet.Attach(entity);
             entry.State = EntityState.Modified;
             return entity;
         }
@@ -66,9 +66,9 @@ namespace Application.DAL.Concrete.Repositories
             return GetAll(IDPredicate).FirstOrDefault();
         }
 
-        public DbEntityEntry<Model> GetDbEntry(int id)
+        public DbEntityEntry<Model> GetDbEntry(Model m)
         {
-            return this.GetDbEntry(GetById(id));
+            return dbContext.Entry(m);
         }
 
         public DbEntityEntry<Model> GetDbEntry<T>(T id)
@@ -84,7 +84,7 @@ namespace Application.DAL.Concrete.Repositories
 
         public virtual IQueryable<Model> GetAll(Expression<Func<Model, bool>> predicate)
         {
-            var query = (QueryableQuery as IQueryable<Model>).Where(predicate);
+            var query = GetAll().Where(predicate);
             return query.AsQueryable();
         }
     }

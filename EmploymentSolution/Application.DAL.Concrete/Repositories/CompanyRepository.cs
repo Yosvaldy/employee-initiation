@@ -14,7 +14,6 @@ namespace Application.DAL.Concrete.Repositories
         public override IQueryable<Company> GetAll()
         {
             return base.GetAll();
-            //return base.GetAll().Include(c => c.AccessLevels);
         }
     }
 }

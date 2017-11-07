@@ -27,7 +27,7 @@ namespace Application.Service.Concrete
 
         public IEnumerable<PositionDto> GetAll()
         {
-            return position.GetAll().Select(mapper.Map<Position, PositionDto>);
+            return position.GetAll().Select(mapper.Map<Position, PositionDto>).ToList();
         }
     }
 }

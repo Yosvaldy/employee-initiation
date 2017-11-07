@@ -6,16 +6,16 @@ namespace Application.Model
 
     public partial class AppDbContext : DbContext
     {
-        public AppDbContext()
-            : base("name=AppModel")
-        {
-        }
-
         public virtual DbSet<AccessLevel> AccessLevels { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Employment> Employments { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<ServiceEquipment> ServiceEquipments { get; set; }
+
+        public AppDbContext()
+            : base("name=AppModel")
+        {
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

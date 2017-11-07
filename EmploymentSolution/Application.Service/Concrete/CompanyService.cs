@@ -3,14 +3,9 @@ using Application.DAL.Concrete.Infrastructure;
 using Application.Dtos;
 using Application.Model.Entities;
 using Application.Service.Abstract;
-using Application.ViewModels;
 using AutoMapper;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
 
 namespace Application.Service.Concrete
 {
@@ -29,7 +24,7 @@ namespace Application.Service.Concrete
 
         public IEnumerable<CompanyDto> GetAll()
         {
-            return company.GetAll().Select(mapper.Map<Company, CompanyDto>);
+            return company.GetAll().Select(mapper.Map<Company, CompanyDto>).ToList();
         }
     }
 }

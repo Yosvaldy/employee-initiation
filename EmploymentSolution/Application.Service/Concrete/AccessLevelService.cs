@@ -24,7 +24,7 @@ namespace Application.Service.Concrete
 
         public IEnumerable<AccessLevelDto> GetAll()
         {
-            return access.GetAll().Select(mapper.Map<AccessLevel, AccessLevelDto>);
+            return access.GetAll().Select(mapper.Map<AccessLevel, AccessLevelDto>).ToList();
         }
     }
 }

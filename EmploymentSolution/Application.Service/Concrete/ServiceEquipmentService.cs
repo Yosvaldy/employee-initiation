@@ -24,7 +24,7 @@ namespace Application.Service.Concrete
 
         public IEnumerable<ServiceEquipmentDto> GetAll()
         {
-            return serviceEquipment.GetAll().Select(mapper.Map<ServiceEquipment, ServiceEquipmentDto>);
+            return serviceEquipment.GetAll().Select(mapper.Map<ServiceEquipment, ServiceEquipmentDto>).ToList();
         }
     }
 }
