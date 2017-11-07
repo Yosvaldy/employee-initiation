@@ -1,12 +1,7 @@
 ﻿using Application.DAL.Abstract.Interfaces;
-using Application.DAL.Concrete.Repositories;
 using Application.Model.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.DAL.Concrete.Repositories
 {
@@ -18,7 +13,7 @@ namespace Application.DAL.Concrete.Repositories
 
         public override IQueryable<Employment> GetAll()
         {
-            return base.GetAll();
+            return base.GetAll().Include(e => e.Company).Include(e => e.Position).Include(e => e.ServiceEquipments).Include(e => e.AccessLevels);
         }
     }
 }

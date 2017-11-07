@@ -13,7 +13,7 @@ namespace Application.Model.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201711062139317_SeedEmploymentServicesTable"; }
+            get { return "201711070022447_SeedEmploymentServicesTable"; }
         }
         
         string IMigrationMetadata.Source

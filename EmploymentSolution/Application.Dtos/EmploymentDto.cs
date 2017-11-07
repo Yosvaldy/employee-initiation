@@ -1,6 +1,6 @@
-﻿using Application.Model.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Application.Dtos
 {
@@ -11,7 +11,7 @@ namespace Application.Dtos
         public string Email { get; set; }
         public string Phone { get; set; }
 
-        public DateTime CreatedDate { get; set; }
+        //public DateTime CreatedDate { get; set; }
         public DateTime StartDate { get; set; }
         public string ManagerEmail { get; set; }
 
@@ -25,12 +25,18 @@ namespace Application.Dtos
         public string ServiceEquipmentOtherdescription { get; set; }
 
         public int PositionId { get; set; }
-        public Position Position { get; set; }
+        //public PositionDto Position { get; set; }
 
         public int CompanyId { get; set; }
-        public Company Company { get; set; }
+        //public CompanyDto Company { get; set; }
 
-        public ICollection<AccessLevel> AccessLevels { get; set; }
-        public ICollection<ServiceEquipment> ServiceEquipments { get; set; }
+        public ICollection<AccessLevelDto> AccessLevels { get; set; }
+        public ICollection<ServiceEquipmentDto> ServiceEquipments { get; set; }
+
+        public EmploymentDto()
+        {
+            AccessLevels = new Collection<AccessLevelDto>();
+            ServiceEquipments = new Collection<ServiceEquipmentDto>();
+        }
     }
 }

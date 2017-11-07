@@ -129,17 +129,17 @@
     <Compile Include="Migrations\201711062034537_RemoveEmployeeEntity.Designer.cs">
       <DependentUpon>201711062034537_RemoveEmployeeEntity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711062134539_SeedEmploymentAccessLevelsTable.cs" />
-    <Compile Include="Migrations\201711062134539_SeedEmploymentAccessLevelsTable.Designer.cs">
-      <DependentUpon>201711062134539_SeedEmploymentAccessLevelsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711070021114_SeedEmploymentsTable.cs" />
+    <Compile Include="Migrations\201711070021114_SeedEmploymentsTable.Designer.cs">
+      <DependentUpon>201711070021114_SeedEmploymentsTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711062139317_SeedEmploymentServicesTable.cs" />
-    <Compile Include="Migrations\201711062139317_SeedEmploymentServicesTable.Designer.cs">
-      <DependentUpon>201711062139317_SeedEmploymentServicesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711070022001_SeedEmploymentAccessLevelsTable.cs" />
+    <Compile Include="Migrations\201711070022001_SeedEmploymentAccessLevelsTable.Designer.cs">
+      <DependentUpon>201711070022001_SeedEmploymentAccessLevelsTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711062142537_SeedEmploymentsTable.cs" />
-    <Compile Include="Migrations\201711062142537_SeedEmploymentsTable.Designer.cs">
-      <DependentUpon>201711062142537_SeedEmploymentsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711070022447_SeedEmploymentServicesTable.cs" />
+    <Compile Include="Migrations\201711070022447_SeedEmploymentServicesTable.Designer.cs">
+      <DependentUpon>201711070022447_SeedEmploymentServicesTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,14 +201,14 @@
     <EmbeddedResource Include="Migrations\201711062034537_RemoveEmployeeEntity.resx">
       <DependentUpon>201711062034537_RemoveEmployeeEntity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711062134539_SeedEmploymentAccessLevelsTable.resx">
-      <DependentUpon>201711062134539_SeedEmploymentAccessLevelsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711070021114_SeedEmploymentsTable.resx">
+      <DependentUpon>201711070021114_SeedEmploymentsTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711062139317_SeedEmploymentServicesTable.resx">
-      <DependentUpon>201711062139317_SeedEmploymentServicesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711070022001_SeedEmploymentAccessLevelsTable.resx">
+      <DependentUpon>201711070022001_SeedEmploymentAccessLevelsTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711062142537_SeedEmploymentsTable.resx">
-      <DependentUpon>201711062142537_SeedEmploymentsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711070022447_SeedEmploymentServicesTable.resx">
+      <DependentUpon>201711070022447_SeedEmploymentServicesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
