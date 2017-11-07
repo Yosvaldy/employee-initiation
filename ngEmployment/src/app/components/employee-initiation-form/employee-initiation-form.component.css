@@ -1,0 +1,18 @@
+#employForm{
+    margin-top: 70px;
+}
+
+.add-user{
+    background-color: #ffffff;
+    padding-top: 30px; 
+    padding-bottom: 30px;
+    border: solid 1px rgb(201, 201, 201);  
+}
+
+#employForm>input{
+    width: 50%;
+}
+
+.btn-sm{
+    width: 100px;
+}

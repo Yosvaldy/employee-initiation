@@ -1,0 +1,54 @@
+import { AppError } from './../components/common/app-error';
+import { BadRequestError } from '../components/common/bad-request-error';
+import { NotFoundError } from './../components/common/not-found-error';
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
+
+@Injectable()
+export class DataService {
+
+  constructor(private url: string, private http: Http) { }
+
+  getAll(){
+    return this.http.get(this.url)
+      .map(response => response.json())
+      .catch(this.handleError);
+  }
+
+  getById(id){
+    return this.http.get(this.url + '/' + id)
+      .map(response => response.json())
+      .catch(this.handleError);
+  }
+
+  create(resource){
+    return this.http.post(this.url, JSON.stringify(resource))
+      .map(response => response.json())
+      .catch(this.handleError);
+  }
+
+  update(resourse){
+    return this.http.put(this.url + '/' + resourse.id, JSON.stringify(resourse))
+      .map(res => res.json());
+  }
+
+  delete(id){
+    return this.http.delete(this.url + '/' + id)
+      .map(response => response.json())
+      .catch(this.handleError);
+  }
+
+  private handleError(error: Response){
+    if(error.status === 400)
+      return Observable.throw(new BadRequestError(error.json()));
+    
+      if(error.status === 404)
+        return Observable.throw(new NotFoundError());
+    
+      return Observable.throw(new AppError(error));
+  }
+}

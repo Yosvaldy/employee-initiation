@@ -1,0 +1,26 @@
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Start Date</th>
+            <th>Company</th>
+            <th>Position</th>
+            <th class="text-center">Edit</th>
+            <th class="text-center">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employment of employments">
+            <th>{{ employment.fullName }}</th>
+            <th>{{ employment.email }}</th>
+            <th>{{ employment.phone }}</th>
+            <th>{{ employment.startDate }}</th>
+            <th>{{ employment.companyId }}</th>
+            <th>{{ employment.positionId }}</th>
+            <th class="text-center"><span class="glyphicon glyphicon-check" aria-hidden="true"></span></th>
+            <th class="text-center"><span (click)="delete()" class="glyphicon glyphicon-trash" aria-hidden="true"></span></th>
+        </tr>
+    </tbody>
+  </table>
