@@ -296,10 +296,6 @@
       <Project>{65b9c5a5-1df4-4434-8b4a-73248faa27d5}</Project>
       <Name>Application.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Application.ViewModels\Application.ViewModels.csproj">
-      <Project>{3b7b9dbb-480e-4d1f-9882-2aecdfc377ad}</Project>
-      <Name>Application.ViewModels</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

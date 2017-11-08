@@ -65,8 +65,6 @@
     <Compile Include="Concrete\ServiceEquipmentService.cs" />
     <Compile Include="Infrastructure\Mapping\DtoToModel.cs" />
     <Compile Include="Infrastructure\Mapping\ModelToDto.cs" />
-    <Compile Include="Infrastructure\Mapping\ModelToViewModel.cs" />
-    <Compile Include="Infrastructure\Mapping\ViewModelToModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,10 +83,6 @@
     <ProjectReference Include="..\Application.Model\Application.Model.csproj">
       <Project>{ad9b2b63-e172-4c7e-a565-750e56d959e6}</Project>
       <Name>Application.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Application.ViewModels\Application.ViewModels.csproj">
-      <Project>{3B7B9DBB-480E-4D1F-9882-2AECDFC377AD}</Project>
-      <Name>Application.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

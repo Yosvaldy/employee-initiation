@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.DAL.Concrete", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Service", "Application.Service\Application.Service.csproj", "{65B9C5A5-1DF4-4434-8B4A-73248FAA27D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.ViewModels", "Application.ViewModels\Application.ViewModels.csproj", "{3B7B9DBB-480E-4D1F-9882-2AECDFC377AD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appplication.Api", "Appplication.Api\Appplication.Api.csproj", "{DAEF53B9-5AA0-4CDF-89C6-68F1CF7ED6A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Dtos", "Application.Dtos\Application.Dtos.csproj", "{2336E63F-8DFF-49B6-BA30-2A8A5444D440}"
@@ -39,10 +37,6 @@ Global
 		{65B9C5A5-1DF4-4434-8B4A-73248FAA27D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65B9C5A5-1DF4-4434-8B4A-73248FAA27D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65B9C5A5-1DF4-4434-8B4A-73248FAA27D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B7B9DBB-480E-4D1F-9882-2AECDFC377AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B7B9DBB-480E-4D1F-9882-2AECDFC377AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B7B9DBB-480E-4D1F-9882-2AECDFC377AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B7B9DBB-480E-4D1F-9882-2AECDFC377AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DAEF53B9-5AA0-4CDF-89C6-68F1CF7ED6A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DAEF53B9-5AA0-4CDF-89C6-68F1CF7ED6A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAEF53B9-5AA0-4CDF-89C6-68F1CF7ED6A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
