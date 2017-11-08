@@ -9,22 +9,22 @@ using System.Linq;
 
 namespace Application.Service.Concrete
 {
-    public class AccessLevelService : IAccessLevelService
+    public class AccessService : IAccessService
     {
-        private IAccessLevelRepository access;
+        private IAccessRepository repository;
         private IUnitOfWork unitOfWork;
         private IMapper mapper;
 
-        public AccessLevelService(IAccessLevelRepository access, IUnitOfWork unitOfWork, IMapper mapper)
+        public AccessService(IAccessRepository repository, IUnitOfWork unitOfWork, IMapper mapper)
         {
-            this.access = access;
+            this.repository = repository;
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
 
-        public IEnumerable<AccessLevelDto> GetAll()
+        public IEnumerable<AccessDto> GetAll()
         {
-            return access.GetAll().Select(mapper.Map<AccessLevel, AccessLevelDto>).ToList();
+            return repository.GetAll().Select(mapper.Map<Access, AccessDto>).ToList();
         }
     }
 }

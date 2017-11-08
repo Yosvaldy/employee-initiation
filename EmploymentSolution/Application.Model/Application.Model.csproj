@@ -51,16 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\AccessLevel.cs" />
+    <Compile Include="Entities\Access.cs" />
     <Compile Include="AppDbContext.cs" />
     <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\Employment.cs" />
     <Compile Include="Entities\Position.cs" />
-    <Compile Include="EntityConfiguration\AccessLevelConfiguration.cs" />
+    <Compile Include="EntityConfiguration\AccessConfiguration.cs" />
     <Compile Include="EntityConfiguration\CompanyConfiguration.cs" />
     <Compile Include="EntityConfiguration\EmploymentConfiguration.cs" />
     <Compile Include="EntityConfiguration\PositionConfiguration.cs" />
-    <Compile Include="EntityConfiguration\ServiceEquipmentConfiguration.cs" />
+    <Compile Include="EntityConfiguration\EquipmentConfiguration.cs" />
     <Compile Include="Migrations\201711050916596_InitialMigration.cs" />
     <Compile Include="Migrations\201711050916596_InitialMigration.Designer.cs">
       <DependentUpon>201711050916596_InitialMigration.cs</DependentUpon>
@@ -143,7 +143,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entities\ServiceEquipment.cs" />
+    <Compile Include="Entities\Equipment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

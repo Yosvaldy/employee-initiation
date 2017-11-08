@@ -7,8 +7,8 @@ namespace Application.Service.Abstract
     {
         IEnumerable<EmploymentDto> GetAll();
         EmploymentDto GetById(int id);
-        void Create(EmploymentDto p);
-        void Update(EmploymentDto p);
+        void Create(EmploymentDto e);
+        void Update(EmploymentDto e);
         void Delete(int id);
     }
 }

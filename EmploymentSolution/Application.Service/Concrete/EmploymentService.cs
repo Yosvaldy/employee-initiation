@@ -11,45 +11,45 @@ namespace Application.Service.Concrete
 {
     class EmploymentService : IEmploymentService
     {
-        private IEmploymentRepository employment;
+        private IEmploymentRepository repository;
         private IUnitOfWork unitOfWork;
         private IMapper mapper;
 
-        public EmploymentService(IEmploymentRepository employment, IUnitOfWork unitOfWork, IMapper mapper)
+        public EmploymentService(IEmploymentRepository repository, IUnitOfWork unitOfWork, IMapper mapper)
         {
-            this.employment = employment;
+            this.repository = repository;
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
 
         public IEnumerable<EmploymentDto> GetAll()
         {
-            return employment.GetAll().Select(mapper.Map<EmploymentDto>).ToList();
+            return repository.GetAll().Select(mapper.Map<EmploymentDto>).ToList();
         }
 
         public EmploymentDto GetById(int id)
         {
-            var employ = employment.GetById(id);
+            var employ = repository.GetById(id);
             return mapper.Map<EmploymentDto>(employ);
         }
 
         public void Create(EmploymentDto e)
         {
             Employment emp = mapper.Map<Employment>(e);
-            employment.Create(emp);
+            repository.Create(emp);
             unitOfWork.Commit();
         }
 
         public void Update(EmploymentDto e)
         {
             Employment emp = mapper.Map<Employment>(e);
-            employment.Update(emp);
+            repository.Update(emp);
             unitOfWork.Commit();
         }
 
         public void Delete(int id)
         {
-            employment.Delete(id);
+            repository.Delete(id);
             unitOfWork.Commit();
         }
     }

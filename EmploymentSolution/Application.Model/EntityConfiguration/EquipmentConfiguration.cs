@@ -3,9 +3,9 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Application.Model.EntityConfiguration
 {
-    public class PositionConfiguration : EntityTypeConfiguration<Position>
+    public class EquipmentConfiguration : EntityTypeConfiguration<Equipment>
     {
-        public PositionConfiguration()
+        public EquipmentConfiguration()
         {
             Property(e => e.Name)
             .IsRequired()

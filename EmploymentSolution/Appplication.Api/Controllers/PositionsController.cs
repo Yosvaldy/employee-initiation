@@ -5,17 +5,17 @@ namespace Appplication.Api.Controllers
 {
     public class PositionsController : ApiController
     {
-        private readonly IPositionService positionService;
+        private readonly IPositionService service;
 
-        public PositionsController(IPositionService posService)
+        public PositionsController(IPositionService service)
         {
-            positionService = posService;
+            this.service = service;
         }
 
         // GET: /api/positions
         public IHttpActionResult GetPositions()
         {
-            var positions = positionService.GetAll();
+            var positions = service.GetAll();
             return Ok(positions);
         }
     }

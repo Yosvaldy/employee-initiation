@@ -40,12 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IAccessLevelRepository.cs" />
+    <Compile Include="Interfaces\IAccessRepository.cs" />
     <Compile Include="Interfaces\ICompanyRepository.cs" />
     <Compile Include="Interfaces\IEmploymentRepository.cs" />
     <Compile Include="Interfaces\IPositionRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IServiceEquipmentRepository.cs" />
+    <Compile Include="Interfaces\IEquipmentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

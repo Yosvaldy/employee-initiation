@@ -9,11 +9,11 @@ namespace Application.Model.EntityConfiguration
         {
             Property(e => e.FullName)
             .IsRequired()
-            .HasMaxLength(50);
+            .HasMaxLength(100);
 
             Property(e => e.Email)
             .IsRequired()
-            .HasMaxLength(50);
+            .HasMaxLength(100);
 
             Property(e => e.Phone)
             .IsRequired()
@@ -21,49 +21,53 @@ namespace Application.Model.EntityConfiguration
 
             Property(e => e.ManagerEmail)
             .IsRequired()
-            .HasMaxLength(50);
+            .HasMaxLength(100);
 
             Property(e => e.RestrictedAccess)
                 .HasMaxLength(255);
 
-            Property(e => e.AdditionalInfoUserAccess)
+            Property(e => e.AdditionalInfo)
             .HasMaxLength(255);
 
             Property(e => e.AdditionalService)
             .HasMaxLength(255);
 
-            Property(e => e.PositionOtherDescription)
+            Property(e => e.OtherPosition)
                 .HasMaxLength(255);
 
-            Property(e => e.CompanyOtherDescription)
+            Property(e => e.OtherComapny)
             .HasMaxLength(255);
 
-            Property(e => e.AccessLevelOtherDescription)
+            Property(e => e.OtherAccesses)
             .HasMaxLength(255);
 
-            Property(e => e.ServiceEquipmentOtherdescription)
+            Property(e => e.OtherServices)
             .HasMaxLength(255);
+
+            HasRequired(e => e.Company)
+            .WithMany(e => e.Employments)
+            .HasForeignKey(e => e.CompanyId);
 
             HasRequired(e => e.Position)
             .WithMany(e => e.Employments)
             .HasForeignKey(e => e.PositionId);
 
-            HasMany(e => e.AccessLevels)
+            HasMany(e => e.Accesses)
             .WithMany(e => e.Employments)
             .Map(m =>
             {
-                m.ToTable("EmploymentAccessLevels");
+                m.ToTable("EmploymentAccesses");
                 m.MapLeftKey("EmploymentId");
-                m.MapRightKey("AccessLevelId");
+                m.MapRightKey("AccessId");
             });
 
-            HasMany(e => e.ServiceEquipments)
+            HasMany(e => e.Equipments)
             .WithMany(e => e.Employments)
             .Map(m =>
             {
-                m.ToTable("EmploymentServices");
+                m.ToTable("EmploymentEquipments");
                 m.MapLeftKey("EmploymentId");
-                m.MapRightKey("ServiceEquipmentId");
+                m.MapRightKey("EquipmentId");
             });
         }
     }

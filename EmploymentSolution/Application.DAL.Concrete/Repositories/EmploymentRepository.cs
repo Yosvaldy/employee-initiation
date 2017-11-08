@@ -14,14 +14,14 @@ namespace Application.DAL.Concrete.Repositories
 
         public override IQueryable<Employment> GetAll()
         {
-            return base.GetAll().Include(e => e.Company).Include(e => e.Position).Include(e => e.ServiceEquipments).Include(e => e.AccessLevels);
+            return base.GetAll().Include(e => e.Company).Include(e => e.Position).Include(e => e.Equipments).Include(e => e.Accesses);
         }
 
         public override Employment GetById<T>(T id)
         {
             int emp = Convert.ToInt32(id);
 
-            return GetAll(e => e.EmploymentId == emp).FirstOrDefault();
+            return GetAll(e => e.Id == emp).FirstOrDefault();
         }
     }
 }

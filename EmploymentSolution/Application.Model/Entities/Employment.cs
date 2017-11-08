@@ -2,6 +2,7 @@ namespace Application.Model.Entities
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Employments")]
@@ -9,11 +10,11 @@ namespace Application.Model.Entities
     {
         public Employment()
         {
-            AccessLevels = new HashSet<AccessLevel>();
-            ServiceEquipments = new HashSet<ServiceEquipment>();
+            Accesses = new Collection<Access>();
+            Equipments = new Collection<Equipment>();
         }
 
-        public int EmploymentId { get; set; }
+        public int Id { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
@@ -23,21 +24,21 @@ namespace Application.Model.Entities
         public string ManagerEmail { get; set; }
 
         public string RestrictedAccess { get; set; }
-        public string AdditionalInfoUserAccess { get; set; }
+        public string AdditionalInfo { get; set; }
         public string AdditionalService { get; set; }
 
-        public string PositionOtherDescription { get; set; }
-        public string CompanyOtherDescription { get; set; }
-        public string AccessLevelOtherDescription { get; set; }
-        public string ServiceEquipmentOtherdescription { get; set; }
-
-        public int PositionId { get; set; }
-        public Position Position { get; set; }
+        public string OtherPosition { get; set; }
+        public string OtherComapny { get; set; }
+        public string OtherAccesses { get; set; }
+        public string OtherServices { get; set; }
 
         public int CompanyId { get; set; }
         public Company Company { get; set; }
 
-        public ICollection<AccessLevel> AccessLevels { get; set; }
-        public ICollection<ServiceEquipment> ServiceEquipments { get; set; }
+        public int PositionId { get; set; }
+        public Position Position { get; set; }
+
+        public ICollection<Access> Accesses { get; set; }
+        public ICollection<Equipment> Equipments { get; set; }
     }
 }

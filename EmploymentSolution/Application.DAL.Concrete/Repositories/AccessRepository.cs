@@ -5,13 +5,13 @@ using System.Linq;
 
 namespace Application.DAL.Concrete.Repositories
 {
-    public class AccessLevelRepository : Repository<AccessLevel>, IAccessLevelRepository
+    public class AccessRepository : Repository<Access>, IAccessRepository
     {
-        public AccessLevelRepository(DbContext db) : base(db)
+        public AccessRepository(DbContext db) : base(db)
         {
         }
 
-        public override IQueryable<AccessLevel> GetAll()
+        public override IQueryable<Access> GetAll()
         {
             return base.GetAll();
         }

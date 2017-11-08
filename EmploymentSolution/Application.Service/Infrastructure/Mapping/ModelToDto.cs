@@ -13,11 +13,11 @@ namespace Application.Service.Infrastructure.Mapping
 
         public void CreateMaps()
         {
+            CreateMap<Employment, EmploymentDto>();
             CreateMap<Company, CompanyDto>();
             CreateMap<Position, PositionDto>();
-            CreateMap<ServiceEquipment, ServiceEquipmentDto>();
-            CreateMap<AccessLevel, AccessLevelDto>();
-            CreateMap<Employment, EmploymentDto>();
+            CreateMap<Equipment, EquipmentDto>();
+            CreateMap<Access, AccessDto>();
         }
     }
 }

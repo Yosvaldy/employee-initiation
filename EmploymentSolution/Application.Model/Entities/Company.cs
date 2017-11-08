@@ -1,6 +1,7 @@
 namespace Application.Model.Entities
 {
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Companies")]
@@ -8,14 +9,14 @@ namespace Application.Model.Entities
     {
         public Company()
         {
-            Employments = new HashSet<Employment>();
-            AccessLevels = new HashSet<AccessLevel>();
+            Employments = new Collection<Employment>();
+            Accesses = new Collection<Access>();
         }
 
-        public int CompanyId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Employment> Employments { get; set; }
-        public ICollection<AccessLevel> AccessLevels { get; set; }
+        public ICollection<Access> Accesses { get; set; }
     }
 }

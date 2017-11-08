@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Application.Service.Abstract
 {
-    public interface IAccessLevelService
+    public interface IEquipmentService
     {
-        IEnumerable<AccessLevelDto> GetAll();
+        IEnumerable<EquipmentDto> GetAll();
     }
 }

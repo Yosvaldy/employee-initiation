@@ -1,26 +1,21 @@
 ﻿using Application.Service.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace Appplication.Api.Controllers
 {
     public class CompaniesController : ApiController
     {
-        private readonly ICompanyService companyService;
+        private readonly ICompanyService service;
 
-        public CompaniesController(ICompanyService comService)
+        public CompaniesController(ICompanyService service)
         {
-            companyService = comService;
+            this.service = service;
         }
 
         // GET: /api/companies
         public IHttpActionResult GetCompanies()
         {
-            var companies = companyService.GetAll();
+            var companies = service.GetAll();
             return Ok(companies);
         }
     }

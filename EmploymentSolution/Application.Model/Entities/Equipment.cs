@@ -1,17 +1,18 @@
 namespace Application.Model.Entities
 {
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("ServiceEquipments")]
-    public class ServiceEquipment
+    [Table("Services")]
+    public class Equipment
     {
-        public ServiceEquipment()
+        public Equipment()
         {
-            Employments = new HashSet<Employment>();
+            Employments = new Collection<Employment>();
         }
 
-        public int ServiceEquipmentId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Employment> Employments { get; set; }

@@ -5,13 +5,13 @@ using System.Linq;
 
 namespace Application.DAL.Concrete.Repositories
 {
-    public class ServiceRequirementRepository : Repository<ServiceEquipment>, IServiceEquipmentRepository
+    public class EquipmentRepository : Repository<Equipment>, IEquipmentRepository
     {
-        public ServiceRequirementRepository(DbContext db) : base(db)
+        public EquipmentRepository(DbContext db) : base(db)
         {
         }
 
-        public override IQueryable<ServiceEquipment> GetAll()
+        public override IQueryable<Equipment> GetAll()
         {
             return base.GetAll();
         }

@@ -11,20 +11,20 @@ namespace Application.Service.Concrete
 {
     public class CompanyService : ICompanyService
     {
-        private ICompanyRepository company;
+        private ICompanyRepository repository;
         private IUnitOfWork unitOfWork;
         private IMapper mapper;
 
-        public CompanyService(ICompanyRepository company, IUnitOfWork unitOfWork, IMapper mapper)
+        public CompanyService(ICompanyRepository repository, IUnitOfWork unitOfWork, IMapper mapper)
         {
-            this.company = company;
+            this.repository = repository;
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
 
         public IEnumerable<CompanyDto> GetAll()
         {
-            return company.GetAll().Select(mapper.Map<Company, CompanyDto>).ToList();
+            return repository.GetAll().Select(mapper.Map<Company, CompanyDto>).ToList();
         }
     }
 }

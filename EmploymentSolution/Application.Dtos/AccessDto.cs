@@ -1,8 +1,8 @@
 ﻿namespace Application.Dtos
 {
-    public class AccessLevelDto
+    public class AccessDto
     {
-        public int AccessLevelId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

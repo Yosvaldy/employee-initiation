@@ -2,7 +2,7 @@
 
 namespace Application.DAL.Abstract.Interfaces
 {
-    public interface IServiceEquipmentRepository : IRepository<ServiceEquipment>
+    public interface IAccessRepository : IRepository<Access>
     {
     }
 }

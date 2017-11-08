@@ -1,18 +1,19 @@
 namespace Application.Model.Entities
 {
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("AccessLevels")]
-    public class AccessLevel
+    [Table("Accesses")]
+    public class Access
     {
-        public AccessLevel()
+        public Access()
         {
-            Employments = new HashSet<Employment>();
-            Companies = new HashSet<Company>();
+            Employments = new Collection<Employment>();
+            Companies = new Collection<Company>();
         }
 
-        public int AccessLevelId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Employment> Employments { get; set; }

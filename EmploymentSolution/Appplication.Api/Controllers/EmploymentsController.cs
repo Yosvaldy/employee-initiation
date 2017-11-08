@@ -1,62 +1,59 @@
 ﻿using Application.Dtos;
 using Application.Service.Abstract;
-using AutoMapper;
 using System.Web.Http;
 
 namespace Appplication.Api.Controllers
 {
     public class EmploymentsController : ApiController
     {
-        private readonly IEmploymentService employmentService;
-        private readonly IMapper mapper;
+        private readonly IEmploymentService service;
 
-        public EmploymentsController(IEmploymentService emplService, IMapper mapp)
+        public EmploymentsController(IEmploymentService service)
         {
-            this.employmentService = emplService;
-            this.mapper = mapp;
+            this.service = service;
         }
 
         // GET: /api/employments
         [HttpGet]
         public IHttpActionResult GetEmployments()
         {
-            var employments = employmentService.GetAll();
+            var employments = service.GetAll();
             return Ok(employments);
         }
 
         // GET: /api/employments/1
         [HttpGet]
-        public IHttpActionResult GetById(int id)
+        public IHttpActionResult GetEmployment(int id)
         {
-            var employment = employmentService.GetById(id);
+            var employment = service.GetById(id);
             return Ok(employment);
         }
 
         [HttpPost]
-        public IHttpActionResult Create(EmploymentDto emp)
+        public IHttpActionResult Create(EmploymentDto employment)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            employmentService.Create(emp);
+            service.Create(employment);
             return Ok();
         }
 
         [HttpPut]
-        public IHttpActionResult Update(EmploymentDto emp)
+        public IHttpActionResult Update(EmploymentDto employment)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            employmentService.Update(emp);
+            service.Update(employment);
             return Ok();
         }
 
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            var employment = employmentService.GetById(id);
-            employmentService.Delete(employment.EmploymentId);
+            var employment = service.GetById(id);
+            service.Delete(employment.Id);
             return Ok();
         }
 

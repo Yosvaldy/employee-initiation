@@ -1,6 +1,7 @@
 namespace Application.Model.Entities
 {
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Positions")]
@@ -8,10 +9,10 @@ namespace Application.Model.Entities
     {
         public Position()
         {
-            Employments = new HashSet<Employment>();
+            Employments = new Collection<Employment>();
         }
 
-        public int PositionId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Employment> Employments { get; set; }

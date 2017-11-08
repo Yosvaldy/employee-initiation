@@ -1,10 +1,5 @@
 ﻿using Application.Model.Entities;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Model.EntityConfiguration
 {
@@ -14,15 +9,15 @@ namespace Application.Model.EntityConfiguration
         {
                 Property(e => e.Name)
                 .IsRequired()
-                .HasMaxLength(50);
+                .HasMaxLength(100);
 
-                HasMany(e => e.AccessLevels)
+                HasMany(e => e.Accesses)
                 .WithMany(e => e.Companies)
                 .Map(m => 
                 {
-                    m.ToTable("CompanyAccessLevels");
+                    m.ToTable("CompanyAccesses");
                     m.MapLeftKey("CompanyId");
-                    m.MapRightKey("AccessLevelId");
+                    m.MapRightKey("AccessId");
                 });
         }
     }

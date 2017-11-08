@@ -6,11 +6,11 @@ namespace Application.Model
 
     public partial class AppDbContext : DbContext
     {
-        public virtual DbSet<AccessLevel> AccessLevels { get; set; }
+        public virtual DbSet<Access> Accesses { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Employment> Employments { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
-        public virtual DbSet<ServiceEquipment> ServiceEquipments { get; set; }
+        public virtual DbSet<Equipment> Equipments { get; set; }
 
         public AppDbContext()
             : base("name=AppModel")
@@ -19,11 +19,11 @@ namespace Application.Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new AccessLevelConfiguration());
+            modelBuilder.Configurations.Add(new AccessConfiguration());
             modelBuilder.Configurations.Add(new CompanyConfiguration());
             modelBuilder.Configurations.Add(new EmploymentConfiguration());
             modelBuilder.Configurations.Add(new PositionConfiguration());
-            modelBuilder.Configurations.Add(new ServiceEquipmentConfiguration());
+            modelBuilder.Configurations.Add(new EquipmentConfiguration());
         }
     }
 }

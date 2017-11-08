@@ -53,16 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IAccessLevelService.cs" />
+    <Compile Include="Abstract\IAccessService.cs" />
     <Compile Include="Abstract\ICompanyService.cs" />
     <Compile Include="Abstract\IEmploymentService.cs" />
     <Compile Include="Abstract\IPositionService.cs" />
-    <Compile Include="Abstract\IServiceEquipmentService.cs" />
-    <Compile Include="Concrete\AccessLevelService.cs" />
+    <Compile Include="Abstract\IEquipmentService.cs" />
+    <Compile Include="Concrete\AccessService.cs" />
     <Compile Include="Concrete\CompanyService.cs" />
     <Compile Include="Concrete\EmploymentService.cs" />
     <Compile Include="Concrete\PositionService.cs" />
-    <Compile Include="Concrete\ServiceEquipmentService.cs" />
+    <Compile Include="Concrete\EquipmentService.cs" />
     <Compile Include="Infrastructure\Mapping\DtoToModel.cs" />
     <Compile Include="Infrastructure\Mapping\ModelToDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

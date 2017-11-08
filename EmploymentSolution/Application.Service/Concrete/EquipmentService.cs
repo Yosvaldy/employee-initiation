@@ -9,22 +9,22 @@ using System.Linq;
 
 namespace Application.Service.Concrete
 {
-    public class ServiceEquipmentService : IServiceEquipmentService
+    public class EquipmentService : IEquipmentService
     {
-        private IServiceEquipmentRepository serviceEquipment;
+        private IEquipmentRepository repository;
         private IUnitOfWork unitOfWork;
         private IMapper mapper;
 
-        public ServiceEquipmentService(IServiceEquipmentRepository servEquipment, IUnitOfWork unitOfWork, IMapper mapper)
+        public EquipmentService(IEquipmentRepository repository, IUnitOfWork unitOfWork, IMapper mapper)
         {
-            this.serviceEquipment = servEquipment;
+            this.repository = repository;
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
 
-        public IEnumerable<ServiceEquipmentDto> GetAll()
+        public IEnumerable<EquipmentDto> GetAll()
         {
-            return serviceEquipment.GetAll().Select(mapper.Map<ServiceEquipment, ServiceEquipmentDto>).ToList();
+            return repository.GetAll().Select(mapper.Map<Equipment, EquipmentDto>).ToList();
         }
     }
 }
