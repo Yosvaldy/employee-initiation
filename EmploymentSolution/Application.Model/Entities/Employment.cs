@@ -22,7 +22,7 @@ namespace Application.Model.Entities
         public string AdditionalService { get; set; }
 
         public string OtherPosition { get; set; }
-        public string OtherComapny { get; set; }
+        public string OtherCompany { get; set; }
         public string OtherAccesses { get; set; }
         public string OtherServices { get; set; }
 

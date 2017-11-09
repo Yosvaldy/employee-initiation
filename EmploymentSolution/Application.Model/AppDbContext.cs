@@ -24,6 +24,9 @@ namespace Application.Model
             modelBuilder.Configurations.Add(new EmploymentConfiguration());
             modelBuilder.Configurations.Add(new PositionConfiguration());
             modelBuilder.Configurations.Add(new EquipmentConfiguration());
+            modelBuilder.Configurations.Add(new EmploymentEquipmentConfiguration());
+            modelBuilder.Configurations.Add(new EmploymentAccessConfiguration());
+            modelBuilder.Configurations.Add(new CompanyAccessesConfiguration());
         }
     }
 }

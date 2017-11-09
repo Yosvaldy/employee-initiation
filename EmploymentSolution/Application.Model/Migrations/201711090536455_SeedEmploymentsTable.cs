@@ -1,0 +1,37 @@
+namespace Application.Model.Migrations
+{
+    using System.Data.Entity.Migrations;
+
+    public partial class SeedEmploymentsTable : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Employments", "OtherCompany", c => c.String(maxLength: 255));
+            DropColumn("dbo.Employments", "OtherComapny");
+
+            Sql(@"
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'John Smith', N'johnsmith@gmail.com', N'3056542136', N'2017-12-11 00:00:00', N'2017-12-12 00:00:00', N'manager1@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Claire Smith', N'claire@gmail.com', N'3023542136', N'2017-12-11 00:00:00', N'2017-12-12 00:00:00', N'manager1@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 3)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Steve Brown', N'steve@gmail.com', N'3055562136', N'2017-12-11 00:00:00', N'2017-12-12 00:00:00', N'manager2@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 5)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Barry Cole', N'barry@gmail.com', N'3056542736', N'2017-12-11 00:00:00', N'2017-12-13 00:00:00', N'manager1@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 6)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'John Gareth', N'johngareth@gmail.com', N'3856542136', N'2017-12-11 00:00:00', N'2017-12-13 00:00:00', N'manager1@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 1)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Slean Sweeth', N'slean@gmail.com', N'3056578136', N'2017-12-11 00:00:00', N'2017-12-13 00:00:00', N'manager4@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 5)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Madalu Magdalan', N'madalu@gmail.com', N'3045542136', N'2017-12-11 00:00:00', N'2017-12-13 00:00:00', N'manager1@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 1)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Richard Liners', N'richard@gmail.com', N'3052542136', N'2017-12-11 00:00:00', N'2017-12-14 00:00:00', N'manager6@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 3)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Tony Weirt', N'tony@gmail.com', N'3056542123', N'2017-12-11 00:00:00', N'2017-12-17 00:00:00', N'manager8@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, 3)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Ana Linares', N'ana@gmail.com', N'3056542343', N'2017-12-11 00:00:00', N'2017-12-17 00:00:00', N'manager3@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10, 3)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Yoan Rodriguez', N'yoan@gmail.com', N'3056542236', N'2017-12-11 00:00:00', N'2017-12-18 00:00:00', N'manager2@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 11, 8)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Jonathan Diaz', N'jonathan@gmail.com', N'3044542136', N'2017-12-11 00:00:00', N'2017-12-18 00:00:00', N'manager1@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12, 9)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'John Claiman', N'john@gmail.com', N'3056542137', N'2017-12-11 00:00:00', N'2017-12-19 00:00:00', N'manager3@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 14, 2)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Martin Lowert', N'martin@gmail.com', N'3056536136', N'2017-12-11 00:00:00', N'2017-12-22 00:00:00', N'manager1@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 15, 4)
+                    INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Jan Stich', N'jan@gmail.com', N'3056542542', N'2017-12-11 00:00:00', N'2017-12-22 00:00:00', N'manager7@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 15, 7)
+            ");
+        }
+        
+        public override void Down()
+        {
+            AddColumn("dbo.Employments", "OtherComapny", c => c.String(maxLength: 255));
+            DropColumn("dbo.Employments", "OtherCompany");
+        }
+    }
+}

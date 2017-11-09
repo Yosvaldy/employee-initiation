@@ -35,7 +35,7 @@ namespace Application.Model.EntityConfiguration
             Property(e => e.OtherPosition)
                 .HasMaxLength(255);
 
-            Property(e => e.OtherComapny)
+            Property(e => e.OtherCompany)
             .HasMaxLength(255);
 
             Property(e => e.OtherAccesses)

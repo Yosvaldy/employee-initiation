@@ -11,14 +11,14 @@ namespace Application.Model.EntityConfiguration
                 .IsRequired()
                 .HasMaxLength(100);
 
-                HasMany(e => e.Accesses)
-                .WithMany(e => e.Companies)
-                .Map(m => 
-                {
-                    m.ToTable("CompanyAccesses");
-                    m.MapLeftKey("CompanyId");
-                    m.MapRightKey("AccessId");
-                });
+                //HasMany(e => e.Accesses)
+                //.WithMany(e => e.Companies)
+                //.Map(m => 
+                //{
+                //    m.ToTable("CompanyAccesses");
+                //    m.MapLeftKey("CompanyId");
+                //    m.MapRightKey("AccessId");
+                //});
         }
     }
 }
