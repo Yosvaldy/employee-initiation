@@ -54,23 +54,91 @@
     <Compile Include="Entities\Access.cs" />
     <Compile Include="AppDbContext.cs" />
     <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\CompanyAccesses.cs" />
     <Compile Include="Entities\Employment.cs" />
     <Compile Include="Entities\EmploymentAccess.cs" />
     <Compile Include="Entities\EmploymentEquipment.cs" />
     <Compile Include="Entities\Position.cs" />
     <Compile Include="EntityConfiguration\AccessConfiguration.cs" />
+    <Compile Include="EntityConfiguration\CompanyAccessesConfiguration.cs" />
     <Compile Include="EntityConfiguration\CompanyConfiguration.cs" />
     <Compile Include="EntityConfiguration\EmploymentAccessConfiguration.cs" />
     <Compile Include="EntityConfiguration\EmploymentConfiguration.cs" />
     <Compile Include="EntityConfiguration\EmploymentEquipmentConfiguration.cs" />
     <Compile Include="EntityConfiguration\PositionConfiguration.cs" />
     <Compile Include="EntityConfiguration\EquipmentConfiguration.cs" />
+    <Compile Include="Migrations\201711090523309_InitialMigration.cs" />
+    <Compile Include="Migrations\201711090523309_InitialMigration.Designer.cs">
+      <DependentUpon>201711090523309_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711090525188_SeedCompaniesTable.cs" />
+    <Compile Include="Migrations\201711090525188_SeedCompaniesTable.Designer.cs">
+      <DependentUpon>201711090525188_SeedCompaniesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711090526169_SeedAccessesTable.cs" />
+    <Compile Include="Migrations\201711090526169_SeedAccessesTable.Designer.cs">
+      <DependentUpon>201711090526169_SeedAccessesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711090527007_SeedCompanyAccessesTable.cs" />
+    <Compile Include="Migrations\201711090527007_SeedCompanyAccessesTable.Designer.cs">
+      <DependentUpon>201711090527007_SeedCompanyAccessesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711090529114_SeedPositionsTable.cs" />
+    <Compile Include="Migrations\201711090529114_SeedPositionsTable.Designer.cs">
+      <DependentUpon>201711090529114_SeedPositionsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711090529426_SeedEquipmentsTable.cs" />
+    <Compile Include="Migrations\201711090529426_SeedEquipmentsTable.Designer.cs">
+      <DependentUpon>201711090529426_SeedEquipmentsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711090536455_SeedEmploymentsTable.cs" />
+    <Compile Include="Migrations\201711090536455_SeedEmploymentsTable.Designer.cs">
+      <DependentUpon>201711090536455_SeedEmploymentsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711090600423_SeedEmploymentAccessesTable.cs" />
+    <Compile Include="Migrations\201711090600423_SeedEmploymentAccessesTable.Designer.cs">
+      <DependentUpon>201711090600423_SeedEmploymentAccessesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711090617166_SeedEmploymentEquipmentsTable.cs" />
+    <Compile Include="Migrations\201711090617166_SeedEmploymentEquipmentsTable.Designer.cs">
+      <DependentUpon>201711090617166_SeedEmploymentEquipmentsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Equipment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711090523309_InitialMigration.resx">
+      <DependentUpon>201711090523309_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711090525188_SeedCompaniesTable.resx">
+      <DependentUpon>201711090525188_SeedCompaniesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711090526169_SeedAccessesTable.resx">
+      <DependentUpon>201711090526169_SeedAccessesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711090527007_SeedCompanyAccessesTable.resx">
+      <DependentUpon>201711090527007_SeedCompanyAccessesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711090529114_SeedPositionsTable.resx">
+      <DependentUpon>201711090529114_SeedPositionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711090529426_SeedEquipmentsTable.resx">
+      <DependentUpon>201711090529426_SeedEquipmentsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711090536455_SeedEmploymentsTable.resx">
+      <DependentUpon>201711090536455_SeedEmploymentsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711090600423_SeedEmploymentAccessesTable.resx">
+      <DependentUpon>201711090600423_SeedEmploymentAccessesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711090617166_SeedEmploymentEquipmentsTable.resx">
+      <DependentUpon>201711090617166_SeedEmploymentEquipmentsTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
