@@ -8,12 +8,6 @@ namespace Application.Model.Entities
     [Table("Employments")]
     public class Employment
     {
-        public Employment()
-        {
-            Accesses = new Collection<Access>();
-            Equipments = new Collection<Equipment>();
-        }
-
         public int Id { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
@@ -38,7 +32,13 @@ namespace Application.Model.Entities
         public int PositionId { get; set; }
         public Position Position { get; set; }
 
-        public ICollection<Access> Accesses { get; set; }
-        public ICollection<Equipment> Equipments { get; set; }
+        public ICollection<EmploymentAccess> Accesses { get; set; }
+        public ICollection<EmploymentEquipment> Equipments { get; set; }
+
+        public Employment()
+        {
+            Accesses = new Collection<EmploymentAccess>();
+            Equipments = new Collection<EmploymentEquipment>();
+        }
     }
 }

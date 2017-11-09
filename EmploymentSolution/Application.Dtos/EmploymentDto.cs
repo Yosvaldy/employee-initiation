@@ -1,17 +1,20 @@
-﻿using Application.Model.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Application.Dtos
 {
     public class EmploymentDto
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
 
+        public EmployeeDto Employee { get; set; }
+
+        [Required]
         public DateTime StartDate { get; set; }
+
+        [Required]
         public string ManagerEmail { get; set; }
 
         public string RestrictedAccess { get; set; }
@@ -27,7 +30,13 @@ namespace Application.Dtos
 
         public int PositionId { get; set; }
 
-        public ICollection<Access> Accesses { get; set; }
-        public ICollection<Equipment> Equipments { get; set; }
+        public ICollection<int> Accesses { get; set; }
+        public ICollection<int> Equipments { get; set; }
+
+        public EmploymentDto()
+        {
+            Accesses = new Collection<int>();
+            Equipments = new Collection<int>();
+        }
     }
 }

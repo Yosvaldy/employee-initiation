@@ -55,161 +55,22 @@
     <Compile Include="AppDbContext.cs" />
     <Compile Include="Entities\Company.cs" />
     <Compile Include="Entities\Employment.cs" />
+    <Compile Include="Entities\EmploymentAccess.cs" />
+    <Compile Include="Entities\EmploymentEquipment.cs" />
     <Compile Include="Entities\Position.cs" />
     <Compile Include="EntityConfiguration\AccessConfiguration.cs" />
     <Compile Include="EntityConfiguration\CompanyConfiguration.cs" />
+    <Compile Include="EntityConfiguration\EmploymentAccessConfiguration.cs" />
     <Compile Include="EntityConfiguration\EmploymentConfiguration.cs" />
+    <Compile Include="EntityConfiguration\EmploymentEquipmentConfiguration.cs" />
     <Compile Include="EntityConfiguration\PositionConfiguration.cs" />
     <Compile Include="EntityConfiguration\EquipmentConfiguration.cs" />
-    <Compile Include="Migrations\201711050916596_InitialMigration.cs" />
-    <Compile Include="Migrations\201711050916596_InitialMigration.Designer.cs">
-      <DependentUpon>201711050916596_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711050918209_SeedPositionsTable.cs" />
-    <Compile Include="Migrations\201711050918209_SeedPositionsTable.Designer.cs">
-      <DependentUpon>201711050918209_SeedPositionsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711050920393_SeedServiceEquipmentsTable.cs" />
-    <Compile Include="Migrations\201711050920393_SeedServiceEquipmentsTable.Designer.cs">
-      <DependentUpon>201711050920393_SeedServiceEquipmentsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711050921545_SeedCompaniesTable.cs" />
-    <Compile Include="Migrations\201711050921545_SeedCompaniesTable.Designer.cs">
-      <DependentUpon>201711050921545_SeedCompaniesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711050923188_SeedAccessLevelsTable.cs" />
-    <Compile Include="Migrations\201711050923188_SeedAccessLevelsTable.Designer.cs">
-      <DependentUpon>201711050923188_SeedAccessLevelsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711050927414_SeedNewNameInAccessLevelsTable.cs" />
-    <Compile Include="Migrations\201711050927414_SeedNewNameInAccessLevelsTable.Designer.cs">
-      <DependentUpon>201711050927414_SeedNewNameInAccessLevelsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711050940592_SeedCompanyAccessLevelsTable.cs" />
-    <Compile Include="Migrations\201711050940592_SeedCompanyAccessLevelsTable.Designer.cs">
-      <DependentUpon>201711050940592_SeedCompanyAccessLevelsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711051852074_AddRestrictedAndAdditionalInfoAccessInEmployeeTable.cs" />
-    <Compile Include="Migrations\201711051852074_AddRestrictedAndAdditionalInfoAccessInEmployeeTable.Designer.cs">
-      <DependentUpon>201711051852074_AddRestrictedAndAdditionalInfoAccessInEmployeeTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711051917258_RefactoreEmploymentModel.cs" />
-    <Compile Include="Migrations\201711051917258_RefactoreEmploymentModel.Designer.cs">
-      <DependentUpon>201711051917258_RefactoreEmploymentModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711051924402_RefactoreEmployeeModel.cs" />
-    <Compile Include="Migrations\201711051924402_RefactoreEmployeeModel.Designer.cs">
-      <DependentUpon>201711051924402_RefactoreEmployeeModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711051930552_RefactorePositionModel.cs" />
-    <Compile Include="Migrations\201711051930552_RefactorePositionModel.Designer.cs">
-      <DependentUpon>201711051930552_RefactorePositionModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711051958494_RefactoreServiceEquipmentModel.cs" />
-    <Compile Include="Migrations\201711051958494_RefactoreServiceEquipmentModel.Designer.cs">
-      <DependentUpon>201711051958494_RefactoreServiceEquipmentModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711052116288_RefactoringDomainModel.cs" />
-    <Compile Include="Migrations\201711052116288_RefactoringDomainModel.Designer.cs">
-      <DependentUpon>201711052116288_RefactoringDomainModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711052125114_DeleteDescriptionColumnFromSomeTables.cs" />
-    <Compile Include="Migrations\201711052125114_DeleteDescriptionColumnFromSomeTables.Designer.cs">
-      <DependentUpon>201711052125114_DeleteDescriptionColumnFromSomeTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711060311496_RefactoringEmploymentAndEmployeeTables.cs" />
-    <Compile Include="Migrations\201711060311496_RefactoringEmploymentAndEmployeeTables.Designer.cs">
-      <DependentUpon>201711060311496_RefactoringEmploymentAndEmployeeTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711060322131_ChangeTableNameInEmployments.cs" />
-    <Compile Include="Migrations\201711060322131_ChangeTableNameInEmployments.Designer.cs">
-      <DependentUpon>201711060322131_ChangeTableNameInEmployments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711062034537_RemoveEmployeeEntity.cs" />
-    <Compile Include="Migrations\201711062034537_RemoveEmployeeEntity.Designer.cs">
-      <DependentUpon>201711062034537_RemoveEmployeeEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711070021114_SeedEmploymentsTable.cs" />
-    <Compile Include="Migrations\201711070021114_SeedEmploymentsTable.Designer.cs">
-      <DependentUpon>201711070021114_SeedEmploymentsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711070022001_SeedEmploymentAccessLevelsTable.cs" />
-    <Compile Include="Migrations\201711070022001_SeedEmploymentAccessLevelsTable.Designer.cs">
-      <DependentUpon>201711070022001_SeedEmploymentAccessLevelsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711070022447_SeedEmploymentServicesTable.cs" />
-    <Compile Include="Migrations\201711070022447_SeedEmploymentServicesTable.Designer.cs">
-      <DependentUpon>201711070022447_SeedEmploymentServicesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Equipment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711050916596_InitialMigration.resx">
-      <DependentUpon>201711050916596_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711050918209_SeedPositionsTable.resx">
-      <DependentUpon>201711050918209_SeedPositionsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711050920393_SeedServiceEquipmentsTable.resx">
-      <DependentUpon>201711050920393_SeedServiceEquipmentsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711050921545_SeedCompaniesTable.resx">
-      <DependentUpon>201711050921545_SeedCompaniesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711050923188_SeedAccessLevelsTable.resx">
-      <DependentUpon>201711050923188_SeedAccessLevelsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711050927414_SeedNewNameInAccessLevelsTable.resx">
-      <DependentUpon>201711050927414_SeedNewNameInAccessLevelsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711050940592_SeedCompanyAccessLevelsTable.resx">
-      <DependentUpon>201711050940592_SeedCompanyAccessLevelsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711051852074_AddRestrictedAndAdditionalInfoAccessInEmployeeTable.resx">
-      <DependentUpon>201711051852074_AddRestrictedAndAdditionalInfoAccessInEmployeeTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711051917258_RefactoreEmploymentModel.resx">
-      <DependentUpon>201711051917258_RefactoreEmploymentModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711051924402_RefactoreEmployeeModel.resx">
-      <DependentUpon>201711051924402_RefactoreEmployeeModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711051930552_RefactorePositionModel.resx">
-      <DependentUpon>201711051930552_RefactorePositionModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711051958494_RefactoreServiceEquipmentModel.resx">
-      <DependentUpon>201711051958494_RefactoreServiceEquipmentModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711052116288_RefactoringDomainModel.resx">
-      <DependentUpon>201711052116288_RefactoringDomainModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711052125114_DeleteDescriptionColumnFromSomeTables.resx">
-      <DependentUpon>201711052125114_DeleteDescriptionColumnFromSomeTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711060311496_RefactoringEmploymentAndEmployeeTables.resx">
-      <DependentUpon>201711060311496_RefactoringEmploymentAndEmployeeTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711060322131_ChangeTableNameInEmployments.resx">
-      <DependentUpon>201711060322131_ChangeTableNameInEmployments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711062034537_RemoveEmployeeEntity.resx">
-      <DependentUpon>201711062034537_RemoveEmployeeEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711070021114_SeedEmploymentsTable.resx">
-      <DependentUpon>201711070021114_SeedEmploymentsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711070022001_SeedEmploymentAccessLevelsTable.resx">
-      <DependentUpon>201711070022001_SeedEmploymentAccessLevelsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711070022447_SeedEmploymentServicesTable.resx">
-      <DependentUpon>201711070022447_SeedEmploymentServicesTable.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

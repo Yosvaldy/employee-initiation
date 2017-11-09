@@ -52,23 +52,23 @@ namespace Application.Model.EntityConfiguration
             .WithMany(e => e.Employments)
             .HasForeignKey(e => e.PositionId);
 
-            HasMany(e => e.Accesses)
-            .WithMany(e => e.Employments)
-            .Map(m =>
-            {
-                m.ToTable("EmploymentAccesses");
-                m.MapLeftKey("EmploymentId");
-                m.MapRightKey("AccessId");
-            });
+            //HasMany(e => e.Accesses)
+            //.WithMany(e => e.Employments)
+            //.Map(m =>
+            //{
+            //    m.ToTable("EmploymentAccesses");
+            //    m.MapLeftKey("EmploymentId");
+            //    m.MapRightKey("AccessId");
+            //});
 
-            HasMany(e => e.Equipments)
-            .WithMany(e => e.Employments)
-            .Map(m =>
-            {
-                m.ToTable("EmploymentEquipments");
-                m.MapLeftKey("EmploymentId");
-                m.MapRightKey("EquipmentId");
-            });
+            //HasMany(e => e.Equipments)
+            //.WithMany(e => e.Employments)
+            //.Map(m =>
+            //{
+            //    m.ToTable("EmploymentEquipments");
+            //    m.MapLeftKey("EmploymentId");
+            //    m.MapRightKey("EquipmentId");
+            //});
         }
     }
 }
