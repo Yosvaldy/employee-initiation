@@ -45,14 +45,17 @@ namespace Appplication.Api.Controllers
             return Ok(result);
         }
 
+        //PUT: /api/employments/1
         [HttpPut]
         public IHttpActionResult Update(EmploymentDto employment)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            service.Update(employment);
-            return Ok();
+            service.Update(employment.Id, employment);
+
+            var result = mapper.Map<EmploymentDto>(employment);
+            return Ok(result);
         }
 
         [HttpDelete]
