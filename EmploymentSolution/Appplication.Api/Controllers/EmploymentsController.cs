@@ -1,5 +1,6 @@
 ﻿using Application.Dtos;
 using Application.Service.Abstract;
+using AutoMapper;
 using System.Web.Http;
 
 namespace Appplication.Api.Controllers
@@ -7,10 +8,12 @@ namespace Appplication.Api.Controllers
     public class EmploymentsController : ApiController
     {
         private readonly IEmploymentService service;
+        private readonly IMapper mapper;
 
-        public EmploymentsController(IEmploymentService service)
+        public EmploymentsController(IEmploymentService service, IMapper mapper)
         {
             this.service = service;
+            this.mapper = mapper;
         }
 
         // GET: /api/employments
@@ -36,7 +39,9 @@ namespace Appplication.Api.Controllers
                 return BadRequest(ModelState);
 
             service.Create(employment);
-            return Ok();
+
+            var result = mapper.Map<EmploymentDto>(employment);
+            return Ok(result);
         }
 
         [HttpPut]

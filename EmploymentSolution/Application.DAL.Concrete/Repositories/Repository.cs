@@ -33,7 +33,6 @@ namespace Application.DAL.Concrete.Repositories
         public virtual Model Create(Model entity)
         {
             this.dbSet.Add(entity);
-            //this.dbContext.SaveChanges();
             return entity;
         }
 

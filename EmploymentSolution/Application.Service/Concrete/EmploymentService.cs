@@ -4,6 +4,7 @@ using Application.Dtos;
 using Application.Model.Entities;
 using Application.Service.Abstract;
 using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -29,13 +30,15 @@ namespace Application.Service.Concrete
 
         public EmploymentDto GetById(int id)
         {
-            var employ = repository.GetById(id);
-            return mapper.Map<EmploymentDto>(employ);
+            var employment = repository.GetById(id);
+            return mapper.Map<EmploymentDto>(employment);
         }
 
-        public void Create(EmploymentDto e)
+        public void Create(EmploymentDto employment)
         {
-            Employment emp = mapper.Map<Employment>(e);
+            //Employment emp = mapper.Map<Employment>(employment);
+            var emp = mapper.Map<Employment>(employment);
+            emp.CreatedDate = DateTime.Now;
             repository.Create(emp);
             unitOfWork.Commit();
         }
