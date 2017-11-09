@@ -32,6 +32,7 @@ namespace Appplication.Api.Controllers
             return Ok(employment);
         }
 
+        //POST: /api/employments
         [HttpPost]
         public IHttpActionResult Create(EmploymentDto employment)
         {

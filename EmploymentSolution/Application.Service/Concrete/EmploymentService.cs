@@ -36,7 +36,6 @@ namespace Application.Service.Concrete
 
         public void Create(EmploymentDto employment)
         {
-            //Employment emp = mapper.Map<Employment>(employment);
             var emp = mapper.Map<Employment>(employment);
             emp.CreatedDate = DateTime.Now;
             repository.Create(emp);

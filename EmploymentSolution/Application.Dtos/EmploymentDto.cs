@@ -15,15 +15,28 @@ namespace Application.Dtos
         public DateTime StartDate { get; set; }
 
         [Required]
+        [StringLength(100)]
         public string ManagerEmail { get; set; }
 
+        [StringLength(255)]
         public string RestrictedAccess { get; set; }
+
+        [StringLength(255)]
         public string AdditionalInfo { get; set; }
+
+        [StringLength(255)]
         public string AdditionalService { get; set; }
 
+        [StringLength(255)]
         public string OtherPosition { get; set; }
+
+        [StringLength(255)]
         public string OtherComapny { get; set; }
+
+        [StringLength(255)]
         public string OtherAccesses { get; set; }
+
+        [StringLength(255)]
         public string OtherServices { get; set; }
 
         public int CompanyId { get; set; }
