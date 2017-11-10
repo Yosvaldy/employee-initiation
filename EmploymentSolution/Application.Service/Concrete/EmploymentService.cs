@@ -42,11 +42,11 @@ namespace Application.Service.Concrete
             unitOfWork.Commit();
         }
 
-        public void Update(int id, EmploymentDto employmentDto)
+        public void Update(EmploymentDto employmentDto)
         {
-            var employment = repository.GetById(id);
-            mapper.Map(employmentDto, employment);
-            //repository.Update(emp);
+            var employment = repository.GetById(employmentDto.Id);
+            var emp = mapper.Map(employmentDto, employment);
+            repository.Update(emp);
             unitOfWork.Commit();
         }
 

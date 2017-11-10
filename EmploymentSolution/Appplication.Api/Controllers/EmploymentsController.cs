@@ -52,7 +52,7 @@ namespace Appplication.Api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            service.Update(employment.Id, employment);
+            service.Update(employment);
 
             var result = mapper.Map<EmploymentDto>(employment);
             return Ok(result);

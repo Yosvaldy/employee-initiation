@@ -19,9 +19,9 @@ namespace Application.DAL.Concrete.Repositories
 
         public override Employment GetById<T>(T id)
         {
-            int emp = Convert.ToInt32(id);
+            int empId = Convert.ToInt32(id);
 
-            return GetAll(e => e.Id == emp).FirstOrDefault();
+            return GetAll().Include(e => e.Accesses).Include(e => e.Equipments).SingleOrDefault(e => e.Id == empId);
         }
     }
 }
