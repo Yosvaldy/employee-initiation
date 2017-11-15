@@ -4,13 +4,13 @@ export class Employment{
     fullName: string;
     phone: string;
     email: string;
-    startDate: Date;
-    positionId: number;
-    companyId: number;
+    // startDate: Date;
+    position: string;
+    company: string;
 }
 
-export class ServiceEquipment {
-    serviceEquipmentId: number;
+export class Equipment {
+    equipmentId: number;
     name: string;
 }
 
@@ -24,7 +24,7 @@ export class Company {
     name: string;
 }
 
-export class AccessLevel {
-    AccessLevelId: number;
+export class Access {
+    accessId: number;
     name: string;
 }

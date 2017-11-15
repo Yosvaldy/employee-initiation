@@ -15,9 +15,16 @@ namespace Application.Service.Infrastructure.Mapping
         public void CreateMaps()
         {
             CreateMap<Employment, EmploymentDto>()
-                .ForMember(cr => cr.Employee, opt => opt.MapFrom(c => new EmployeeDto { FullName = c.FullName, Email = c.Email, Phone = c.Phone }))
-                .ForMember(cr => cr.Accesses, opt => opt.MapFrom(c => c.Accesses.Select(e => e.AccessId)))
-                .ForMember(cr => cr.Equipments, opt => opt.MapFrom(c => c.Equipments.Select(e => e.EquipmentId)));
+                .ForMember(dto => dto.Position, action => action.MapFrom(m => m.Position.Name))
+                .ForMember(dto => dto.Company, action => action.MapFrom(m => m.Company.Name));
+
+
+            CreateMap<Employment, EmploymentDetailsDto>()
+                .ForMember(dto => dto.Position, action => action.MapFrom(m => m.Position.Name))
+                .ForMember(dto => dto.Company, action => action.MapFrom(m => m.Company.Name))
+                .ForMember(dto => dto.Accesses, action => action.MapFrom(m => m.Accesses.Select(s => s.Access.Name)))
+                .ForMember(dto => dto.Equipments, action => action.MapFrom(m => m.Equipments.Select(s => s.Equipment.Name)));
+
 
             CreateMap<Company, CompanyDto>();
             CreateMap<Position, PositionDto>();

@@ -11,6 +11,9 @@ import { EmployeeInitiationListComponent } from './components/employee-initiatio
 import { EmploymentService } from './services/employment.service';
 import { EmployeeInitiationFormComponent } from './components/employee-initiation-form/employee-initiation-form.component';
 import { PositionsService } from './services/positions.service';
+import { CompaniesService } from './services/companies.service';
+import { EquipmentsService } from './services/equipments.service';
+import { AccessesService } from './services/accesses.service';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { PositionsService } from './services/positions.service';
   ],
   providers: [
     EmploymentService,
-    PositionsService
+    PositionsService,
+    CompaniesService,
+    EquipmentsService,
+    AccessesService
   ],
   bootstrap: [AppComponent]
 })

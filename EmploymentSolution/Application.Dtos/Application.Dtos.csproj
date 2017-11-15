@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmployeeDto.cs" />
+    <Compile Include="EmploymentSaveDto.cs" />
+    <Compile Include="EmploymentDetailsDto.cs" />
     <Compile Include="EmploymentDto.cs" />
     <Compile Include="AccessDto.cs" />
     <Compile Include="CompanyDto.cs" />

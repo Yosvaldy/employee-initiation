@@ -1,55 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
-
-namespace Application.Dtos
+﻿namespace Application.Dtos
 {
     public class EmploymentDto
     {
         public int Id { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
 
-        public EmployeeDto Employee { get; set; }
+        //public EmployeeDto Employee { get; set; }
 
-        [Required]
-        public DateTime StartDate { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string ManagerEmail { get; set; }
-
-        [StringLength(255)]
-        public string RestrictedAccess { get; set; }
-
-        [StringLength(255)]
-        public string AdditionalInfo { get; set; }
-
-        [StringLength(255)]
-        public string AdditionalService { get; set; }
-
-        [StringLength(255)]
-        public string OtherPosition { get; set; }
-
-        [StringLength(255)]
-        public string OtherComapny { get; set; }
-
-        [StringLength(255)]
-        public string OtherAccesses { get; set; }
-
-        [StringLength(255)]
-        public string OtherServices { get; set; }
-
-        public int CompanyId { get; set; }
-
-        public int PositionId { get; set; }
-
-        public ICollection<int> Accesses { get; set; }
-        public ICollection<int> Equipments { get; set; }
-
-        public EmploymentDto()
-        {
-            Accesses = new Collection<int>();
-            Equipments = new Collection<int>();
-        }
+        public string Company { get; set; }
+        public string Position { get; set; }
     }
 }

@@ -48,6 +48,10 @@ namespace Appplication.Api.Infrastructure.Autofac
                    .SingleInstance()
                    .PropertiesAutowired()
                    .PreserveExistingDefaults();
+
+            builder.RegisterAssemblyTypes(typeof(IEmploymentService).Assembly)
+                .AsClosedTypesOf(typeof(IValueResolver<,,>))
+                .AsSelf().InstancePerLifetimeScope();
         }
     }
 }

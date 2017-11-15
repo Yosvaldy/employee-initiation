@@ -4,7 +4,6 @@
             <th>Full Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Start Date</th>
             <th>Company</th>
             <th>Position</th>
             <th class="text-center">Edit</th>
@@ -16,9 +15,8 @@
             <th>{{ employment.fullName }}</th>
             <th>{{ employment.email }}</th>
             <th>{{ employment.phone }}</th>
-            <th>{{ employment.startDate }}</th>
-            <th>{{ employment.companyId }}</th>
-            <th>{{ employment.positionId }}</th>
+            <th>{{ employment.company }}</th>
+            <th>{{ employment.position }}</th>
             <th class="text-center"><span class="glyphicon glyphicon-check" aria-hidden="true"></span></th>
             <th class="text-center"><span (click)="delete()" class="glyphicon glyphicon-trash" aria-hidden="true"></span></th>
         </tr>

@@ -1,0 +1,13 @@
+.glyphicon-trash,
+.glyphicon-check{
+    cursor: pointer;
+}
+
+.table-bordered{
+    background-color: #ffffff;
+    border: solid 1px rgb(201, 201, 201);
+}
+
+/* table th{
+    cursor: pointer;
+} */

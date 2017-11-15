@@ -65,6 +65,8 @@
     <Compile Include="Concrete\EquipmentService.cs" />
     <Compile Include="Infrastructure\Mapping\DtoToModel.cs" />
     <Compile Include="Infrastructure\Mapping\ModelToDto.cs" />
+    <Compile Include="Infrastructure\Resolvers\AccessesResolver.cs" />
+    <Compile Include="Infrastructure\Resolvers\EquipmentsResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

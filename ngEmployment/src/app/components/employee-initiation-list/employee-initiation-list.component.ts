@@ -18,9 +18,9 @@ export class EmployeeInitiationListComponent implements OnInit {
     fullName: '',
     phone: '',
     email: '',
-    startDate: new Date(),
-    positionId: 0,
-    companyId: 0,
+    // startDate: new Date(),
+    position: '',
+    company: '',
   };
 
   constructor(

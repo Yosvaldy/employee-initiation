@@ -6,9 +6,9 @@ namespace Application.Service.Abstract
     public interface IEmploymentService
     {
         IEnumerable<EmploymentDto> GetAll();
-        EmploymentDto GetById(int id);
-        void Create(EmploymentDto e);
-        void Update(EmploymentDto e);
+        EmploymentDetailsDto GetById(int id);
+        void Create(EmploymentSaveDto e);
+        void Update(EmploymentSaveDto e);
         void Delete(int id);
     }
 }

@@ -29,33 +29,35 @@ namespace Appplication.Api.Controllers
         public IHttpActionResult GetEmployment(int id)
         {
             var employment = service.GetById(id);
+            if (employment == null)
+                return NotFound();
             return Ok(employment);
         }
 
         //POST: /api/employments
         [HttpPost]
-        public IHttpActionResult Create(EmploymentDto employment)
+        public IHttpActionResult Create(EmploymentSaveDto employment)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             service.Create(employment);
 
-            var result = mapper.Map<EmploymentDto>(employment);
-            return Ok(result);
+            //var result = mapper.Map<EmploymentDto>(employment);
+            return CreatedAtRoute("ApiRoute", new { id = employment.Id }, employment);
         }
 
         //PUT: /api/employments/1
         [HttpPut]
-        public IHttpActionResult Update(EmploymentDto employment)
+        public IHttpActionResult Update(EmploymentSaveDto employment)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
             service.Update(employment);
 
-            var result = mapper.Map<EmploymentDto>(employment);
-            return Ok(result);
+            //var result = mapper.Map<EmploymentDto>(employment);
+            return Ok();
         }
 
         [HttpDelete]
