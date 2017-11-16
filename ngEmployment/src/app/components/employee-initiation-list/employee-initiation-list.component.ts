@@ -14,11 +14,10 @@ export class EmployeeInitiationListComponent implements OnInit {
   employments: any[];
 
   employment: Employment = {
-    employmentId: 0,
+    id: 0,
     fullName: '',
     phone: '',
     email: '',
-    // startDate: new Date(),
     position: '',
     company: '',
   };
@@ -32,13 +31,18 @@ export class EmployeeInitiationListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getEmployments();
+  }
+
+  private getEmployments(){
     this.service.getAll()
     .subscribe( employments => this.employments = employments );
   }
 
+
   delete(){
     if(confirm("Are you sure?")){
-      this.service.delete(this.employment.employmentId)
+      this.service.delete(this.employment.id)
       .subscribe(x => {
         
       })

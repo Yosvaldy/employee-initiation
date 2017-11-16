@@ -49,7 +49,8 @@ import { AccessesService } from './services/accesses.service';
     PositionsService,
     CompaniesService,
     EquipmentsService,
-    AccessesService
+    AccessesService,
+    EmploymentService
   ],
   bootstrap: [AppComponent]
 })

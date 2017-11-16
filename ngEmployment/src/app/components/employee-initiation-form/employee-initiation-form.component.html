@@ -1,63 +1,74 @@
-<form>
+<form (ngSubmit)="submit()" #f="ngForm" id="employForm" novalidate>
+  <!-- <div class="row well">
+    <p>
+      {{ employment | json }}
+    </p>
+  </div> -->
     <div class="row">
-      <div class="col-md-4 add-user well" id="employForm">
-          <div class="form-group">
+      <!-- --------------------------------------- TAB1 -------------------------------------- -->
+      <div *ngIf="tab1" class="col-md-6 col-md-offset-3 add-user well" id="employForm">
+          <!-- <div class="form-group">
               <label for="createdDate">Today's Date</label>
-              <input required name="createdate" type="datetime" class="form-control" placeholder="1 Jan 2000">
-          </div>
-          <div class="form-group">
-              <label for="managerEmail">Hiring Manager's Email</label>
-              <input name="managerEmail" type="email" class="form-control" placeholder="manager-hiring@domain.com">    
-          </div>            
+              <input id="createdDate" name="createdate" type="datetime" class="form-control" placeholder="1 Jan 2000" [(ngModel)]="employment.createdDate" #createdDate="ngModel" required>
+          </div> -->
           <div class="form-group">
               <label for="fullName">Employee's Full Name</label>
-              <input name="fullName" type="text" class="form-control" placeholder="">
+              <input id="fullName" name="fullName" type="text" class="form-control" placeholder="" [(ngModel)]="employment.fullName" #fullName="ngModel" required>
           </div>
           <div class="form-group">
               <label for="email">Employee's Email</label>
-              <input name="email" type="email" class="form-control" placeholder="your-email@domain.com">
+              <input id="email" name="email" type="email" class="form-control" placeholder="your-email@domain.com" [(ngModel)]="employment.email" #email="ngModel" required>
           </div>
           <div class="form-group">
               <label for="phone">Employee's Mobile Number</label>
-              <input name="phone" type="number" class="form-control" placeholder="7866654312">
+              <input id="phone" name="phone" type="number" class="form-control" placeholder="7866654312" [(ngModel)]="employment.phone" #phone="ngModel" required>
           </div>
           
           <div class="form-group">
             <label>Position new employee is being hired for</label>
             <div class="radio" *ngFor="let position of positions">
-              <label>
-                <input type="radio" name="optionsRadios" [id]='position.positionId' [value]='position.positionId'>
+              <label for="position{{position.id}}">
+                <input type="radio" name="positionRadios" id="position{{position.id}}" [value]='position.id' [(ngModel)]="employment.positionId">
                 {{position.name}}
               </label>
             </div>
           </div>
         
           <div class="form-group">
+              <label for="managerEmail">Hiring Manager's Email</label>
+              <input id="managerEmail" name="managerEmail" type="email" class="form-control" placeholder="manager-hiring@domain.com" [(ngModel)]="employment.managerEmail" #managerEmail="ngModel" required>    
+          </div>
+
+          <div class="form-group">
             <label for="startDate">Start Date</label>
-            <input name="startDate" type="datetime" class="form-control" placeholder="1 Jan 2000">
+            <input id="startDate" name="startDate" type="datetime" class="form-control" placeholder="1 Jan 2000" [(ngModel)]="employment.startDate" #startDate="ngModel" required>
           </div>
           <hr>
-          <!-- <button (click)="nextTab()" class="btn btn-primary btn-sm">Next</button> -->
+          <button (click)="nextTab()" class="btn btn-primary btn-sm">Next</button>
       </div>
 
-      <div class="col-md-4 add-user well" id="employForm">
+
+      <!-- --------------------------------------- TAB2 -------------------------------------- -->
+      <div *ngIf="tab2" class="col-md-6 col-md-offset-3 add-user well" id="employForm">
           <label>Services & Equipment Needed</label>
-          <div *ngFor="let equipment of equipments" class="checkbox">
-            <label>
-              <input type="checkbox"> {{ equipment.name }}
+          <div *ngFor="let eq of equipments" class="checkbox">
+            <label for="equipment{{eq.id}}">
+              <input type="checkbox" name="equipmentRadios" id="equipment{{eq.id}}" [checked]='employment.equipments.includes(eq.id)' (change)="onEquipmentToggle(eq.id, $event)"> {{ eq.name }}
             </label>
           </div>
 
           <div class="form-group">
               <label for="additionalServices">Additional Services</label>
-              <input name="additionalServices" type="text" class="form-control" placeholder="">
+              <input id="additionalServices" name="additionalServices" type="text" class="form-control" placeholder="" [(ngModel)]="employment.additionalService" #additionalService="ngModel">
           </div>
 
           <div class="form-group">
               <label>What company will employee work for?</label>
+              <!-- <div class="radio" *ngFor="let company of companies" (change)="onCompanyChange()"> -->
               <div class="radio" *ngFor="let company of companies">
-                <label>
-                  <input type="radio" name="optionsRadios" [id]='company.companyId' [value]='company.companyId'>
+                <label for="company{{company.id}}">
+                    <!-- <input type="radio" name="company" [value]='company.companyId' > -->
+                  <input type="radio" name="companyRadios" id="company{{company.id}}" [value]='company.id' [(ngModel)]="employment.companyId">
                   {{company.name}}
                 </label>
               </div>
@@ -65,34 +76,36 @@
   
             <div class="form-group">
                 <label for="additionalInfo">Additional Information</label>
-                <input name="additionalInfo" type="text" class="form-control" placeholder="">
+                <input id="additionalInfo" name="additionalInfo" type="text" class="form-control" placeholder="" [(ngModel)]="employment.additionalInfo" #additionalInfo="ngModel">
             </div>
             <hr>
-          
-          <!-- <button (click)="prevTab()" class="btn btn-primary btn-sm">Previous</button>
-          <button (click)="nextTab()" class="btn btn-primary btn-sm">Next</button> -->
+            <button (click)="prevTab()" class="btn btn-primary btn-sm">Previous</button>
+            <button (click)="nextTab()" class="btn btn-primary btn-sm">Next</button>
       </div>
 
-      <div class="col-md-4 add-user well" id="employForm">
+
+      <!-- --------------------------------------- TAB3 -------------------------------------- -->
+      <div *ngIf="tab3" class="col-md-6 col-md-offset-3 add-user well" id="employForm">
           <label>What buildings will employee need access to?</label>
-          <div *ngFor="let access of accesses" class="checkbox">
-            <label>
-              <input type="checkbox"> {{ access.name }}
+          <div *ngFor="let acc of accesses" class="checkbox">
+            <label for="access{{acc.id}}">
+              <input type="checkbox" name="accessRadios" id="access{{acc.id}}" [checked]='employment.accesses.includes(acc.id)' (change)="onAccessToggle(acc.id, $event)"> {{ acc.name }}
             </label>
           </div>
 
           <div class="form-group">
               <label for="restrictedAccess">Restricted Access</label>
-              <input name="restrictedAccess" type="text" class="form-control" placeholder="">
+              <input id="restrictedAccess" name="restrictedAccess" type="text" class="form-control" placeholder="" [(ngModel)]="employment.restrictedAccess" #restrictedAccess="ngModel">
           </div>
-          
           <hr>
-          <!-- <button (click)="prevTab()" class="btn btn-primary btn-sm">Previous</button> -->
+          <button (click)="prevTab()" class="btn btn-primary btn-sm">Previous</button>
+          <button class="btn btn-primary btn-sm">Submit</button>
       </div>
-  </div>
 
-  <div class="row well text-center">
-    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
   </div>
+  <!-- <div class="row well text-center">
+    <button class="btn btn-primary btn-sm">Submit</button>
+  </div> -->
 </form>
   
+

@@ -1,9 +1,11 @@
+import { Company, Access, SaveEmployment } from './../model-data/models';
 import { AccessesService } from './../../services/accesses.service';
 import { EquipmentsService } from './../../services/equipments.service';
 import { CompaniesService } from './../../services/companies.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PositionsService } from '../../services/positions.service';
+import { EmploymentService } from '../../services/employment.service';
 
 @Component({
   selector: 'app-employee-initiation-form',
@@ -11,14 +13,39 @@ import { PositionsService } from '../../services/positions.service';
   styleUrls: ['./employee-initiation-form.component.css']
 })
 export class EmployeeInitiationFormComponent implements OnInit {
-  positions: any[];
-  equipments: any[];
+
+  employment: SaveEmployment = {
+    id: 0,
+    fullName: null,
+    phone: null,
+    email: null,
+    startDate: new Date(),
+    managerEmail: null,
+    restrictedAccess: null,
+    additionalInfo: null,
+    additionalService: null,
+    otherPosition: null,
+    otherComapny: null,
+    otherAccesses: null,
+    otherServices: null,
+    companyId: 0,
+    positionId: 0,
+    accesses: [],
+    equipments: []
+  };
+
+
   companies: any[];
   accesses: any[];
+  positions: any[];
+  equipments: any[];
 
-  // tab1: boolean = true;
-  // tab2: boolean = false;
-  // tab3: boolean = false;
+  accessByCompany: any[];
+  
+
+  tab1: boolean = true;
+  tab2: boolean = false;
+  tab3: boolean = false;
 
   constructor(
     private router: Router,
@@ -26,10 +53,12 @@ export class EmployeeInitiationFormComponent implements OnInit {
     private servicePosition: PositionsService,
     private serviceCompany: CompaniesService,
     private serviceEquipment: EquipmentsService,
-    private serviceAccess: AccessesService
+    private serviceAccess: AccessesService,
+    private serviceEmployment: EmploymentService
   ) { }
 
   ngOnInit() {
+
     this.servicePosition.getAll()
     .subscribe( positions => this.positions = positions );
 
@@ -43,26 +72,65 @@ export class EmployeeInitiationFormComponent implements OnInit {
     .subscribe( accesses => this.accesses = accesses );
   }
 
-  // nextTab(){
-  //   if(this.tab1 && !this.tab2 && !this.tab3){
-  //     this.tab1 = false;
-  //     this.tab2 = true; 
-  //   }
-  //   else if(!this.tab1 && this.tab2 && !this.tab3){
-  //     this.tab2 = false;
-  //     this.tab3 = true; 
-  //   }
+  // onCompanyChange(){
+  //   // console.log("The comany was changed!", this.employment);
+  //   var selectedCompany = this.companies.find(c => c.id == this.employment.companyId);
+  //   // this.accesses = selectedCompany.accesses;
+  //   this.serviceCompany.getById(selectedCompany.id)
+  //   .subscribe(accessesByCompany => accessesByCompany = accessesByCompany);
+  //   console.log(selectedCompany);
+  //   console.log(selectedCompany.id);
+  //   console.log(selectedCompany.name);
   // }
 
-  // prevTab(){
-  //   if(this.tab2 && !this.tab3){
-  //     this.tab1 = true;
-  //     this.tab2 = false; 
-  //   }
-  //   else if(!this.tab2 && this.tab3){
-  //     this.tab2 = true;
-  //     this.tab3 = false; 
-  //   }
-  // }
+  onEquipmentToggle(equipmentId, $event){
+    if($event.target.checked)
+      this.employment.equipments.push(equipmentId);
+    else{
+      var index = this.employment.equipments.indexOf(equipmentId);
+      this.employment.equipments.splice(index, 1);
+    }
+  }
 
+  onAccessToggle(accessId, $event){
+    if($event.target.checked)
+      this.employment.accesses.push(accessId);
+    else{
+      var index = this.employment.accesses.indexOf(accessId);
+      this.employment.accesses.splice(index, 1);
+    }
+  }
+
+  submit(){
+    this.serviceEmployment.createEmployment(this.employment)
+    .subscribe(
+      x => console.log(x),
+      err => {
+        
+      });
+    this.router.navigate(['/employments']);
+  }
+
+  nextTab(){
+    if(this.tab1){
+      this.tab1 = false;
+      this.tab2 = true;
+    }
+    else if(this.tab2){
+      this.tab2 = false;
+      this.tab3 = true;
+    }
+  }
+
+  prevTab(){
+    if(this.tab2){
+      this.tab2 = false;
+      this.tab1 = true;
+    }
+    else if(this.tab3){
+      this.tab3 = false;
+      this.tab2 = true;
+    }
+  }
 }
+

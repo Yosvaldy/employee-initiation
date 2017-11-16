@@ -11,3 +11,11 @@
 /* table th{
     cursor: pointer;
 } */
+
+.table{
+    margin-bottom: 0;
+}
+
+.panel-default{
+    padding: 20px;
+}

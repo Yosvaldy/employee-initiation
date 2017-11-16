@@ -1,3 +1,4 @@
+import { SaveEmployment } from './../components/model-data/models';
 import { AppError } from './../components/common/app-error';
 import { BadRequestError } from '../components/common/bad-request-error';
 import { NotFoundError } from './../components/common/not-found-error';
@@ -50,5 +51,11 @@ export class DataService {
         return Observable.throw(new NotFoundError());
     
       return Observable.throw(new AppError(error));
+  }
+
+  createEmployment(employment){
+    return this.http.post(this.url, employment)
+      .map(response => response.json())
+      .catch(this.handleError);
   }
 }
