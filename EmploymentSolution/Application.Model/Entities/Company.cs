@@ -10,13 +10,13 @@ namespace Application.Model.Entities
         public Company()
         {
             Employments = new Collection<Employment>();
-            Accesses = new Collection<Access>();
+            Accesses = new Collection<CompanyAccesses>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<Employment> Employments { get; set; }
-        public ICollection<Access> Accesses { get; set; }
+        public ICollection<CompanyAccesses> Accesses { get; set; }
     }
 }

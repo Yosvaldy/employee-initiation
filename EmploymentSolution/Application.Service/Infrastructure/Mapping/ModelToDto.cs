@@ -26,6 +26,9 @@ namespace Application.Service.Infrastructure.Mapping
                 .ForMember(dto => dto.Equipments, action => action.MapFrom(m => m.Equipments.Select(s => s.Equipment.Name)));
 
 
+            CreateMap<Company, CompanyDetailsDto>()
+                .ForMember(dto => dto.Accesses, action => action.MapFrom(m => m.Accesses.Select(s => s.Access.Name)));
+
             CreateMap<Company, CompanyDto>();
             CreateMap<Position, PositionDto>();
             CreateMap<Equipment, EquipmentDto>();

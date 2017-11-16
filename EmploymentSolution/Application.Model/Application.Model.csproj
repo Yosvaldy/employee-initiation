@@ -67,41 +67,41 @@
     <Compile Include="EntityConfiguration\EmploymentEquipmentConfiguration.cs" />
     <Compile Include="EntityConfiguration\PositionConfiguration.cs" />
     <Compile Include="EntityConfiguration\EquipmentConfiguration.cs" />
-    <Compile Include="Migrations\201711090523309_InitialMigration.cs" />
-    <Compile Include="Migrations\201711090523309_InitialMigration.Designer.cs">
-      <DependentUpon>201711090523309_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201711151741565_InitialMigration.cs" />
+    <Compile Include="Migrations\201711151741565_InitialMigration.Designer.cs">
+      <DependentUpon>201711151741565_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711090525188_SeedCompaniesTable.cs" />
-    <Compile Include="Migrations\201711090525188_SeedCompaniesTable.Designer.cs">
-      <DependentUpon>201711090525188_SeedCompaniesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711151742391_SeedCompaniesTable.cs" />
+    <Compile Include="Migrations\201711151742391_SeedCompaniesTable.Designer.cs">
+      <DependentUpon>201711151742391_SeedCompaniesTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711090526169_SeedAccessesTable.cs" />
-    <Compile Include="Migrations\201711090526169_SeedAccessesTable.Designer.cs">
-      <DependentUpon>201711090526169_SeedAccessesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711151743128_SeedAccessesTable.cs" />
+    <Compile Include="Migrations\201711151743128_SeedAccessesTable.Designer.cs">
+      <DependentUpon>201711151743128_SeedAccessesTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711090527007_SeedCompanyAccessesTable.cs" />
-    <Compile Include="Migrations\201711090527007_SeedCompanyAccessesTable.Designer.cs">
-      <DependentUpon>201711090527007_SeedCompanyAccessesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711151743455_SeedCompanyAccessesTable.cs" />
+    <Compile Include="Migrations\201711151743455_SeedCompanyAccessesTable.Designer.cs">
+      <DependentUpon>201711151743455_SeedCompanyAccessesTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711090529114_SeedPositionsTable.cs" />
-    <Compile Include="Migrations\201711090529114_SeedPositionsTable.Designer.cs">
-      <DependentUpon>201711090529114_SeedPositionsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711151744197_SeedPositionsTable.cs" />
+    <Compile Include="Migrations\201711151744197_SeedPositionsTable.Designer.cs">
+      <DependentUpon>201711151744197_SeedPositionsTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711090529426_SeedEquipmentsTable.cs" />
-    <Compile Include="Migrations\201711090529426_SeedEquipmentsTable.Designer.cs">
-      <DependentUpon>201711090529426_SeedEquipmentsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711151744447_SeedEquipmentsTable.cs" />
+    <Compile Include="Migrations\201711151744447_SeedEquipmentsTable.Designer.cs">
+      <DependentUpon>201711151744447_SeedEquipmentsTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711090536455_SeedEmploymentsTable.cs" />
-    <Compile Include="Migrations\201711090536455_SeedEmploymentsTable.Designer.cs">
-      <DependentUpon>201711090536455_SeedEmploymentsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711151745220_SeedEmploymentsTable.cs" />
+    <Compile Include="Migrations\201711151745220_SeedEmploymentsTable.Designer.cs">
+      <DependentUpon>201711151745220_SeedEmploymentsTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711090600423_SeedEmploymentAccessesTable.cs" />
-    <Compile Include="Migrations\201711090600423_SeedEmploymentAccessesTable.Designer.cs">
-      <DependentUpon>201711090600423_SeedEmploymentAccessesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711151747458_SeedEmploymentAccessesTable.cs" />
+    <Compile Include="Migrations\201711151747458_SeedEmploymentAccessesTable.Designer.cs">
+      <DependentUpon>201711151747458_SeedEmploymentAccessesTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711090617166_SeedEmploymentEquipmentsTable.cs" />
-    <Compile Include="Migrations\201711090617166_SeedEmploymentEquipmentsTable.Designer.cs">
-      <DependentUpon>201711090617166_SeedEmploymentEquipmentsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201711151748187_SeedEmploymentEquipmentsTable.cs" />
+    <Compile Include="Migrations\201711151748187_SeedEmploymentEquipmentsTable.Designer.cs">
+      <DependentUpon>201711151748187_SeedEmploymentEquipmentsTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,32 +112,32 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711090523309_InitialMigration.resx">
-      <DependentUpon>201711090523309_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711151741565_InitialMigration.resx">
+      <DependentUpon>201711151741565_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711090525188_SeedCompaniesTable.resx">
-      <DependentUpon>201711090525188_SeedCompaniesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711151742391_SeedCompaniesTable.resx">
+      <DependentUpon>201711151742391_SeedCompaniesTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711090526169_SeedAccessesTable.resx">
-      <DependentUpon>201711090526169_SeedAccessesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711151743128_SeedAccessesTable.resx">
+      <DependentUpon>201711151743128_SeedAccessesTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711090527007_SeedCompanyAccessesTable.resx">
-      <DependentUpon>201711090527007_SeedCompanyAccessesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711151743455_SeedCompanyAccessesTable.resx">
+      <DependentUpon>201711151743455_SeedCompanyAccessesTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711090529114_SeedPositionsTable.resx">
-      <DependentUpon>201711090529114_SeedPositionsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711151744197_SeedPositionsTable.resx">
+      <DependentUpon>201711151744197_SeedPositionsTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711090529426_SeedEquipmentsTable.resx">
-      <DependentUpon>201711090529426_SeedEquipmentsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711151744447_SeedEquipmentsTable.resx">
+      <DependentUpon>201711151744447_SeedEquipmentsTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711090536455_SeedEmploymentsTable.resx">
-      <DependentUpon>201711090536455_SeedEmploymentsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711151745220_SeedEmploymentsTable.resx">
+      <DependentUpon>201711151745220_SeedEmploymentsTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711090600423_SeedEmploymentAccessesTable.resx">
-      <DependentUpon>201711090600423_SeedEmploymentAccessesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711151747458_SeedEmploymentAccessesTable.resx">
+      <DependentUpon>201711151747458_SeedEmploymentAccessesTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711090617166_SeedEmploymentEquipmentsTable.resx">
-      <DependentUpon>201711090617166_SeedEmploymentEquipmentsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201711151748187_SeedEmploymentEquipmentsTable.resx">
+      <DependentUpon>201711151748187_SeedEmploymentEquipmentsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

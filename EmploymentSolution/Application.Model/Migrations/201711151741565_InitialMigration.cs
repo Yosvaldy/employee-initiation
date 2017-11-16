@@ -13,11 +13,8 @@ namespace Application.Model.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 100),
-                        Company_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Companies", t => t.Company_Id)
-                .Index(t => t.Company_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Companies",
@@ -27,6 +24,19 @@ namespace Application.Model.Migrations
                         Name = c.String(nullable: false, maxLength: 100),
                     })
                 .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.CompanyAccesses",
+                c => new
+                    {
+                        CompanyId = c.Int(nullable: false),
+                        AccessId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.CompanyId, t.AccessId })
+                .ForeignKey("dbo.Accesses", t => t.AccessId, cascadeDelete: true)
+                .ForeignKey("dbo.Companies", t => t.CompanyId, cascadeDelete: true)
+                .Index(t => t.CompanyId)
+                .Index(t => t.AccessId);
             
             CreateTable(
                 "dbo.Employments",
@@ -43,7 +53,7 @@ namespace Application.Model.Migrations
                         AdditionalInfo = c.String(maxLength: 255),
                         AdditionalService = c.String(maxLength: 255),
                         OtherPosition = c.String(maxLength: 255),
-                        OtherComapny = c.String(maxLength: 255),
+                        OtherCompany = c.String(maxLength: 255),
                         OtherAccesses = c.String(maxLength: 255),
                         OtherServices = c.String(maxLength: 255),
                         CompanyId = c.Int(nullable: false),
@@ -99,47 +109,32 @@ namespace Application.Model.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            CreateTable(
-                "dbo.CompanyAccesses",
-                c => new
-                    {
-                        CompanyId = c.Int(nullable: false),
-                        AccessId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.CompanyId, t.AccessId })
-                .ForeignKey("dbo.Accesses", t => t.AccessId, cascadeDelete: true)
-                .ForeignKey("dbo.Companies", t => t.CompanyId, cascadeDelete: true)
-                .Index(t => t.CompanyId)
-                .Index(t => t.AccessId);
-            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.CompanyAccesses", "CompanyId", "dbo.Companies");
-            DropForeignKey("dbo.CompanyAccesses", "AccessId", "dbo.Accesses");
             DropForeignKey("dbo.Employments", "PositionId", "dbo.Positions");
             DropForeignKey("dbo.EmploymentEquipments", "EquipmentId", "dbo.Equipments");
             DropForeignKey("dbo.EmploymentEquipments", "EmploymentId", "dbo.Employments");
             DropForeignKey("dbo.Employments", "CompanyId", "dbo.Companies");
             DropForeignKey("dbo.EmploymentAccesses", "EmploymentId", "dbo.Employments");
             DropForeignKey("dbo.EmploymentAccesses", "AccessId", "dbo.Accesses");
-            DropForeignKey("dbo.Accesses", "Company_Id", "dbo.Companies");
-            DropIndex("dbo.CompanyAccesses", new[] { "AccessId" });
-            DropIndex("dbo.CompanyAccesses", new[] { "CompanyId" });
+            DropForeignKey("dbo.CompanyAccesses", "CompanyId", "dbo.Companies");
+            DropForeignKey("dbo.CompanyAccesses", "AccessId", "dbo.Accesses");
             DropIndex("dbo.EmploymentEquipments", new[] { "EquipmentId" });
             DropIndex("dbo.EmploymentEquipments", new[] { "EmploymentId" });
             DropIndex("dbo.EmploymentAccesses", new[] { "AccessId" });
             DropIndex("dbo.EmploymentAccesses", new[] { "EmploymentId" });
             DropIndex("dbo.Employments", new[] { "PositionId" });
             DropIndex("dbo.Employments", new[] { "CompanyId" });
-            DropIndex("dbo.Accesses", new[] { "Company_Id" });
-            DropTable("dbo.CompanyAccesses");
+            DropIndex("dbo.CompanyAccesses", new[] { "AccessId" });
+            DropIndex("dbo.CompanyAccesses", new[] { "CompanyId" });
             DropTable("dbo.Positions");
             DropTable("dbo.Equipments");
             DropTable("dbo.EmploymentEquipments");
             DropTable("dbo.EmploymentAccesses");
             DropTable("dbo.Employments");
+            DropTable("dbo.CompanyAccesses");
             DropTable("dbo.Companies");
             DropTable("dbo.Accesses");
         }

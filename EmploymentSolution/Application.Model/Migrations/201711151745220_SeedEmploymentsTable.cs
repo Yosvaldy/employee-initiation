@@ -1,14 +1,12 @@
 namespace Application.Model.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
-
+    
     public partial class SeedEmploymentsTable : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Employments", "OtherCompany", c => c.String(maxLength: 255));
-            DropColumn("dbo.Employments", "OtherComapny");
-
             Sql(@"
                     INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'John Smith', N'johnsmith@gmail.com', N'3056542136', N'2017-12-11 00:00:00', N'2017-12-12 00:00:00', N'manager1@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1)
                     INSERT INTO[dbo].[Employments] ([FullName], [Email], [Phone], [CreatedDate], [StartDate], [ManagerEmail], [RestrictedAccess], [AdditionalInfo], [AdditionalService], [OtherPosition], [OtherCompany], [OtherAccesses], [OtherServices], [CompanyId], [PositionId]) VALUES(N'Claire Smith', N'claire@gmail.com', N'3023542136', N'2017-12-11 00:00:00', N'2017-12-12 00:00:00', N'manager1@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 3)
@@ -30,8 +28,7 @@ namespace Application.Model.Migrations
         
         public override void Down()
         {
-            AddColumn("dbo.Employments", "OtherComapny", c => c.String(maxLength: 255));
-            DropColumn("dbo.Employments", "OtherCompany");
+            Sql("DELETE FROM Employments");
         }
     }
 }

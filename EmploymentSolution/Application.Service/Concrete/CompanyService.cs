@@ -26,5 +26,11 @@ namespace Application.Service.Concrete
         {
             return repository.GetAll().Select(mapper.Map<Company, CompanyDto>).ToList();
         }
+
+        public CompanyDetailsDto GetById(int id)
+        {
+            var company = repository.GetById(id);
+            return mapper.Map<Company, CompanyDetailsDto>(company);
+        }
     }
 }

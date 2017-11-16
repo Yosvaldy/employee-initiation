@@ -27,8 +27,8 @@ namespace Application.Dtos
         public string Company { get; set; }
         public string Position { get; set; }
 
-        public ICollection<string> Accesses { get; set; }
-        public ICollection<string> Equipments { get; set; }
+        public IEnumerable<string> Accesses { get; set; }
+        public IEnumerable<string> Equipments { get; set; }
 
         public EmploymentDetailsDto()
         {

@@ -18,5 +18,15 @@ namespace Appplication.Api.Controllers
             var companies = service.GetAll();
             return Ok(companies);
         }
+
+        // GET: /api/companies/1
+        [HttpGet]
+        public IHttpActionResult GetCompany(int id)
+        {
+            var company = service.GetById(id);
+            if (company == null)
+                return NotFound();
+            return Ok(company);
+        }
     }
 }

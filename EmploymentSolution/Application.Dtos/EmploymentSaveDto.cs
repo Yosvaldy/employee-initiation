@@ -54,8 +54,8 @@ namespace Application.Dtos
 
         public int PositionId { get; set; }
 
-        public ICollection<int> Accesses { get; set; }
-        public ICollection<int> Equipments { get; set; }
+        public IEnumerable<int> Accesses { get; set; }
+        public IEnumerable<int> Equipments { get; set; }
 
         public EmploymentSaveDto()
         {

@@ -6,5 +6,6 @@ namespace Application.Service.Abstract
     public interface ICompanyService
     {
         IEnumerable<CompanyDto> GetAll();
+        CompanyDetailsDto GetById(int id);
     }
 }

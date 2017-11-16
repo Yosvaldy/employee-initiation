@@ -1,7 +1,8 @@
 namespace Application.Model.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
-
+    
     public partial class SeedEquipmentsTable : DbMigration
     {
         public override void Up()
