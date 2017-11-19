@@ -8,8 +8,8 @@ namespace Appplication.Api.Controllers
         {
             ViewBag.Title = "Home Page";
 
-            //return Redirect("swagger/ui/index");
-            return View();
+            return Redirect("swagger/ui/index");
+            //return View();
         }
     }
 }

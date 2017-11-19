@@ -13,14 +13,7 @@ export class EmployeeInitiationListComponent implements OnInit {
 
   employments: any[];
 
-  employment: Employment = {
-    id: 0,
-    fullName: '',
-    phone: '',
-    email: '',
-    position: '',
-    company: '',
-  };
+  employment = new Employment();
 
   constructor(
       private router: Router,
@@ -40,13 +33,14 @@ export class EmployeeInitiationListComponent implements OnInit {
   }
 
 
-  delete(){
+  delete(employment){
     if(confirm("Are you sure?")){
-      this.service.delete(this.employment.id)
-      .subscribe(x => {
-        
-      })
+      let index = this.employments.indexOf(employment);
+      this.employments.splice(index, 1);
 
+      this.service.delete(employment.id)
+      .subscribe(x => console.log(x));
+      
     }
   }
 }

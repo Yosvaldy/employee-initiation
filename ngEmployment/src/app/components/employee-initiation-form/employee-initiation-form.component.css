@@ -16,3 +16,16 @@
 .btn-sm{
     width: 100px;
 }
+
+.alert-danger {
+    background-color: #ff8484;
+    border-color: #e74c3c;
+    color: #ffffff;
+}
+
+.alert {
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}

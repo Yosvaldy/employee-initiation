@@ -6,7 +6,7 @@ import { DataService } from './data.service';
 export class CompaniesService extends DataService {
 
   constructor(http: Http) {
-    super('http://localhost:5000/api/companies', http);
+    super('http://localhost/ngemploy/api/companies', http);
   }
 
 }

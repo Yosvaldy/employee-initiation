@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
 export class PositionsService extends DataService {
 
   constructor(http: Http) {
-    super('http://localhost:5000/api/positions', http);
+    super('http://localhost/ngemploy/api/positions', http);
   }
 
 }

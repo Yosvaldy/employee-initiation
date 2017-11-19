@@ -29,6 +29,15 @@ export interface Employment{
     position: string;
 }
 
+export class Employment{
+    id: number;
+    fullName: string;
+    phone: string;
+    email: string;
+    company: string;
+    position: string;
+}
+
 export interface Equipment {
     equipmentId: number;
     name: string;

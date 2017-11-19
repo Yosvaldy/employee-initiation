@@ -15,11 +15,11 @@ import { EmploymentService } from '../../services/employment.service';
 export class EmployeeInitiationFormComponent implements OnInit {
 
   employment: SaveEmployment = {
-    id: 0,
-    fullName: null,
-    phone: null,
-    email: null,
-    startDate: new Date(),
+      id: 0,
+      fullName: null,
+      phone: null,
+      email: null,
+      startDate: new Date(),
     managerEmail: null,
     restrictedAccess: null,
     additionalInfo: null,

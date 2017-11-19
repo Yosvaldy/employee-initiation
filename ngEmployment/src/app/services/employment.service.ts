@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class EmploymentService extends DataService {
 
   constructor(http: Http) {
-    super('http://localhost:5000/api/employments', http);
+    super('http://localhost/ngemploy/api/employments', http);
   }
 
 }
